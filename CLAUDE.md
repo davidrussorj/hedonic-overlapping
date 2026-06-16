@@ -1,5 +1,41 @@
 # CLAUDE.md — Overlapping Hedonic Game
 
+---
+
+## ⚡ PRÓXIMA SESSÃO — Fase 3 (graphobject.c)
+
+**Objetivo:** expor `igraph_community_leiden_overlapping` ao Python retornando `VertexCover`.
+
+**Tudo já está pronto para começar:**
+- Função C compilada em `libigraph.a` ✅
+- Conversores existem com nomes corretos ✅
+  - `igraphmodule_PyObject_to_vector_int_list_t()` — Python list → C
+  - `igraphmodule_vector_int_list_t_to_PyList()` — C → Python list
+- Skeleton do wrapper já escrito no CLAUDE.md (seção Fase 3) ✅
+- Wrapper Python (`community.py`) já escrito em `python_patch/community_overlapping.py` ✅
+
+**4 passos na ordem:**
+
+1. **Inserir wrapper em `graphobject.c`** — linha 13574 é onde `community_leiden` está definida; inserir logo abaixo (linha ~13700)
+2. **Registrar na tabela de métodos** — linha 18551 é onde `community_leiden` está registrada; inserir logo abaixo
+3. **Adicionar wrapper Python em `community.py`** — copiar de `python_patch/community_overlapping.py`
+4. **Recompilar e testar:**
+   ```bash
+   cd /home/davidcubric/python-igraph
+   python3.12 -m pip install -e . --no-build-isolation
+   python3.12 scripts/test_small.py
+   ```
+
+**Atenção:** os binários de build em `/tmp/` são perdidos ao reiniciar. Recriar com:
+```bash
+cd /tmp && apt-get download bison flex m4
+dpkg -x bison_*.deb ./bison_pkg && dpkg -x flex_*.deb ./flex_pkg && dpkg -x m4_*.deb ./m4_pkg
+export PATH="/tmp/m4_pkg/usr/bin:/tmp/bison_pkg/usr/bin:/tmp/flex_pkg/usr/bin:$PATH"
+export BISON_PKGDATADIR=/tmp/bison_pkg/usr/share/bison && export M4=/tmp/m4_pkg/usr/bin/m4
+```
+
+---
+
 ## O que é este projeto
 
 Extensão do algoritmo Leiden baseado em CPM para detectar comunidades **overlapping**
