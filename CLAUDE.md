@@ -2,6 +2,42 @@
 
 ---
 
+## ⚡ PRÓXIMA SESSÃO — Fase 4: DBLP
+
+**Fases 1, 2 e 3 estão concluídas.** Só falta rodar o experimento DBLP.
+
+**Problema identificado na última tentativa:**
+O `dblp_experiment.py` usa `load_dblp()` que chama `g.simplify()` após construir o grafo.
+Para 317k nós + 1M arestas isso consome ~3.5GB RAM e >8 minutos só no carregamento.
+O processo foi cancelado antes de chegar na parte do experimento.
+
+**Solução para próxima sessão — remover o `simplify()` ou usar grafo pré-processado:**
+
+Opção A (rápida): remover `g.simplify()` do `load_dblp()` em `scripts/dblp_experiment.py`
+— o DBLP já não tem multi-arestas relevantes.
+
+Opção B (robusta): pré-processar o DBLP uma vez e salvar como `.pkl`:
+```python
+import pickle, igraph as ig
+# rodar uma vez:
+g, gt, _ = load_dblp('data/dblp')
+pickle.dump((g, gt), open('data/dblp/dblp.pkl', 'wb'))
+# nas próximas execuções:
+g, gt = pickle.load(open('data/dblp/dblp.pkl', 'rb'))
+```
+
+**Comando para rodar:**
+```bash
+cd /home/davidcubric/hedonic-overlapping
+python3.12 scripts/dblp_experiment.py --data_dir data/dblp --resolution_sweep --output results/dblp_sweep.json
+```
+
+**Estado do OverlappingGame (já corrigido):**
+O `hedonic/overlapping.py` agora usa o backend C corretamente via `GraphBase.community_leiden_overlapping()`.
+Arquivo: `~/.local/lib/python3.12/site-packages/hedonic/overlapping.py`
+
+---
+
 ## ⚡ PRÓXIMA SESSÃO — Fase 3 (graphobject.c)
 
 **Objetivo:** expor `igraph_community_leiden_overlapping` ao Python retornando `VertexCover`.
