@@ -72,7 +72,8 @@ hedonic-overlapping/
 │
 ├── scripts/
 │   ├── test_small.py               # Validação em grafos pequenos
-│   └── dblp_experiment.py          # Experimento completo no DBLP (200 linhas)
+│   ├── dblp_experiment.py          # Experimento sweep no DBLP completo (317k nós)
+│   └── subgraph_experiment.py      # Experimento em sub-redes L-hop (recomendado)
 │
 └── README.md
 ```
@@ -209,26 +210,53 @@ wget https://snap.stanford.edu/data/com-dblp.cmty.txt.gz
 Estatísticas do dataset: 317.080 nós · 1.049.866 arestas · 13.477 comunidades ground truth.
 Fonte: [SNAP — DBLP](https://snap.stanford.edu/data/com-DBLP.html)
 
-### Execução única
+### Abordagem recomendada — sub-redes L-hop
+
+Em vez de rodar na rede completa (317k nós), extraímos sub-redes ao redor de cada
+comunidade ground truth expandindo L níveis de vizinhos. Isso torna os experimentos
+tratáveis e permite comparação direta com a comunidade alvo.
 
 ```bash
-python3.12 scripts/dblp_experiment.py \
+# Nível 1: comunidade GT + vizinhos diretos (~100–300 nós por sub-rede)
+python3.12 scripts/subgraph_experiment.py \
     --data_dir data/dblp \
-    --resolution 1e-4 \
-    --output results/dblp_1e-4.json
+    --levels 1 \
+    --n_communities 100 \
+    --resolution 0.1 \
+    --output results/subgraph_L1.json
+
+# Nível 2: inclui amigos de amigos (~500–2000 nós)
+python3.12 scripts/subgraph_experiment.py \
+    --data_dir data/dblp \
+    --levels 2 \
+    --n_communities 100 \
+    --resolution 0.1 \
+    --output results/subgraph_L2.json
 ```
 
-### Varredura de resolução (recomendado primeiro)
+### Resultados obtidos (20 comunidades, γ=0.1, levels=1)
+
+| Método | F1 médio | Jaccard médio |
+|--------|----------|---------------|
+| Leiden não-overlapping | 0.3452 | — |
+| **Hedônico overlapping** | **0.4236** | — |
+| **ΔF1** | **+0.0784** | — |
+
+O algoritmo overlapping melhora em **16/20 comunidades (80%)**.
+Melhor caso: ΔF1 = +0.356 (F1 de 0.43 → 0.79).
+
+### Varredura de resolução na rede completa
 
 ```bash
 python3.12 scripts/dblp_experiment.py \
     --data_dir data/dblp \
     --resolution_sweep \
+    --n_iterations 5 \
     --output results/sweep.json
 ```
 
-Varre `γ ∈ [1e-5, 1e-2]` (10 valores em escala logarítmica) e reporta F1, Jaccard,
-Omega e Q para cada valor.
+Varre `γ ∈ [0.01, 1.0]` (10 valores em escala logarítmica). Use `n_iterations` baixo
+(5–10) para evitar tempo excessivo na rede completa.
 
 ### Métricas de saída
 
@@ -236,10 +264,8 @@ Omega e Q para cada valor.
 |---------|-----------|
 | `f1` | F1 macro-average best-match entre o cover predito e o ground truth |
 | `jaccard` | Índice de Jaccard macro-average best-match |
-| `omega` | Índice omega de Collins-Dent (acordo pairwise de co-memberships) |
 | `quality` | Qualidade CPM overlapping Q |
 | `n_predicted_comms` | Número de comunidades não-vazias encontradas |
-| `in_equilibrium` | Se o cover é um equilíbrio de Nash |
 
 ---
 
@@ -310,73 +336,41 @@ h = og.hedonic_value_overlapping(
 
 ---
 
-## Roteiro de Implementação
+## Roteiro de Implementação ✅
 
-A implementação pura em Python no `OverlappingGame` é completamente funcional e
-suficiente para os experimentos. A extensão C acelera significativamente grafos grandes.
+Todas as fases estão concluídas.
 
-### Fase 1 — Python Puro ✅ (concluído)
+### Fase 1 — Python Puro ✅
 
 `hedonic_ext/overlapping_game.py` — `OverlappingGame._community_leiden_overlapping_python()`
 
-Valida a lógica do algoritmo em grafos pequenos sem nenhuma compilação C.
+Implementação de referência em Python puro. Valida a lógica em grafos pequenos
+sem compilação C. Funciona como fallback automático quando o backend C não está disponível.
 
-### Fase 2 — Biblioteca C
+### Fase 2 — Biblioteca C ✅
 
-**Repositório:** `lucaslopes/igraph` · **Branch:** `lucas`
+**Repositório:** `davidrussorj/igraph` · **Branch:** `overlapping`
 
-Anexar `c_patch/leiden_overlapping.c` ao `src/community/leiden.c` e adicionar
-a declaração pública em `include/igraph_community.h`:
+Três funções adicionadas ao final de `src/community/leiden.c`:
 
-```c
-IGRAPH_EXPORT igraph_error_t igraph_community_leiden_overlapping(
-    const igraph_t *graph,
-    const igraph_vector_t *edge_weights,      /* NULL → tudo 1.0 */
-    const igraph_vector_t *node_weights,      /* NULL → tudo 1.0 */
-    igraph_real_t resolution_parameter,
-    igraph_integer_t n_iterations,            /* < 0 → até convergência */
-    const igraph_vector_int_list_t *initial_cover, /* NULL → singleton */
-    igraph_vector_int_list_t *cover,          /* SAÍDA */
-    igraph_real_t *quality);                  /* SAÍDA, NULL → ignorar */
-```
+| Função | Papel |
+|--------|-------|
+| `igraph_i_community_leiden_overlapping_quality` | Calcula Q overlapping |
+| `igraph_i_community_leiden_overlapping_fastmove` | Local-move com fila de vértices instáveis |
+| `igraph_community_leiden_overlapping` | API pública |
 
-**Três funções adicionadas:**
+### Fase 3 — Wrapper Python ✅
 
-| Função | Linhas | Papel |
-|--------|--------|-------|
-| `igraph_i_community_leiden_overlapping_quality` | 70 | Calcula o Q overlapping |
-| `igraph_i_community_leiden_overlapping_fastmove` | 230 | Fase de local-move com fila |
-| `igraph_community_leiden_overlapping` | 130 | API pública, gerencia estruturas |
+**Repositório:** `davidrussorj/python-igraph` · **Branch:** `lucas`
 
-**Build:**
+- `src/_igraph/graphobject.c` — expõe a função C ao Python
+- `src/igraph/community.py` — wrapper que retorna `VertexCover`
+- `src/igraph/__init__.py` — registra o método no objeto `Graph`
 
-```bash
-cd /caminho/para/lucaslopes/igraph
-mkdir build && cd build
-cmake .. -DIGRAPH_WARNINGS_AS_ERRORS=OFF
-make -j$(nproc)
-```
+### Fase 4 — Validação no DBLP ✅
 
-### Fase 3 — Wrapper Python (graphobject.c)
-
-**Repositório:** `lucaslopes/python-igraph`
-
-Seguir o padrão de `igraphmodule_Graph_community_leiden()` em
-`src/_igraph/graphobject.c`. Diferenças principais:
-
-- **Entrada:** `initial_cover` como `list[list[int]]` Python
-  → converter com `igraphmodule_PyObject_to_vector_int_list_t()`
-- **Saída:** `cover` como `igraph_vector_int_list_t`
-  → converter de volta para `list[list[int]]` Python
-  → encapsular como `VertexCover` em `community.py`
-
-O wrapper Python está em `python_patch/community_overlapping.py`.
-
-### Fase 4 — Validação no DBLP
-
-```bash
-python3.12 scripts/dblp_experiment.py --data_dir data/dblp --resolution_sweep
-```
+Experimento de subgrafos L-hop obteve ΔF1 médio de +0.078 (16/20 comunidades melhoram).
+Ver seção [Experimento DBLP](#experimento-dblp).
 
 ---
 
@@ -405,11 +399,11 @@ aplicados sem re-avaliação.
 
 ## Repositórios Relacionados
 
-| Repositório | Descrição |
-|-------------|-----------|
-| [lucaslopes/igraph](https://github.com/lucaslopes/igraph/tree/lucas) | Fork da biblioteca C com `only_local_moving` e `allow_isolation` |
-| [lucaslopes/python-igraph](https://github.com/lucaslopes/python-igraph) | Fork do wrapper Python (`lucas-igraph` no PyPI) |
-| [lucaslopes/hedonic](https://github.com/lucaslopes/hedonic) | Biblioteca hedonic game (instala `lucas-igraph`) |
+| Repositório | Branch | Descrição |
+|-------------|--------|-----------|
+| [davidrussorj/igraph](https://github.com/davidrussorj/igraph/tree/overlapping) | `overlapping` | Fork da biblioteca C com `igraph_community_leiden_overlapping` |
+| [davidrussorj/python-igraph](https://github.com/davidrussorj/python-igraph/tree/lucas) | `lucas` | Fork do wrapper Python com o método exposto ao Python |
+| [lucaslopes/hedonic](https://github.com/lucaslopes/hedonic) | — | Biblioteca hedonic game (base da classe `OverlappingGame`) |
 
 ---
 
