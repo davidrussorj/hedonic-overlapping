@@ -15,7 +15,7 @@ Metodologia: sub-redes de 1-hop ao redor de comunidades ground truth selecionada
 | Hedônico overlapping | **0.4227** | ±0.1938 |
 | ΔF1 | **+0.1080** | ±0.0986 |
 
-- Melhorou em: **179/200 comunidades (89.5%)**
+- Melhorou em: **169/200 comunidades (84.5%)**
 - Equilíbrio de Nash: **200/200 (100%)**
 
 ---
@@ -32,7 +32,7 @@ Média de 20.3 parceiros GT por comunidade, com 97.2 nós compartilhados em méd
 | Hedônico overlapping | **0.3940** | ±0.1767 |
 | ΔF1 | **+0.1253** | ±0.1029 |
 
-- Melhorou em: **184/200 comunidades (92.0%)**
+- Melhorou em: **176/200 comunidades (88.0%)**
 - Equilíbrio de Nash: **200/200 (100%)**
 
 ---
@@ -44,7 +44,7 @@ Média de 20.3 parceiros GT por comunidade, com 97.2 nós compartilhados em méd
 | F1 Leiden | 0.315 | 0.269 |
 | F1 Hedonic | 0.423 | 0.394 |
 | ΔF1 médio | +0.108 | **+0.125** |
-| Melhorou em | 89.5% | **92.0%** |
+| Melhorou em | 84.5% | **88.0%** |
 | Nash eq | **100%** | **100%** |
 
 O Leiden parte de um F1 mais baixo nas comunidades com sobreposição real (0.269 vs 0.315) — esperado, pois são exatamente os casos onde a restrição não-overlapping é mais limitante. O algoritmo hedônico recupera mais nesses casos (ΔF1 +0.125 vs +0.108), confirmando a hipótese teórica.
