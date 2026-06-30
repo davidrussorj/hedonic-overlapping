@@ -2,73 +2,38 @@
 
 ---
 
-## ⚡ PRÓXIMA SESSÃO — Fase 4: DBLP
+## ⚡ ESTADO ATUAL — Todas as fases concluídas
 
-**Fases 1, 2 e 3 estão concluídas.** Só falta rodar o experimento DBLP.
+**Fases 1, 2, 3 e 4 estão concluídas.** O projeto está pronto para escalar os experimentos e escrever o paper.
 
-**Problema identificado na última tentativa:**
-O `dblp_experiment.py` usa `load_dblp()` que chama `g.simplify()` após construir o grafo.
-Para 317k nós + 1M arestas isso consome ~3.5GB RAM e >8 minutos só no carregamento.
-O processo foi cancelado antes de chegar na parte do experimento.
+### Resultados obtidos (subgraph experiment, 20 comunidades, γ=0.1, levels=1)
 
-**Solução para próxima sessão — remover o `simplify()` ou usar grafo pré-processado:**
-
-Opção A (rápida): remover `g.simplify()` do `load_dblp()` em `scripts/dblp_experiment.py`
-— o DBLP já não tem multi-arestas relevantes.
-
-Opção B (robusta): pré-processar o DBLP uma vez e salvar como `.pkl`:
-```python
-import pickle, igraph as ig
-# rodar uma vez:
-g, gt, _ = load_dblp('data/dblp')
-pickle.dump((g, gt), open('data/dblp/dblp.pkl', 'wb'))
-# nas próximas execuções:
-g, gt = pickle.load(open('data/dblp/dblp.pkl', 'rb'))
+```
+Leiden  F1 médio : 0.3452
+Hedonic F1 médio : 0.4236
+ΔF1 médio        : +0.0784
+Melhorou em      : 16/20 comunidades (80%)
 ```
 
-**Comando para rodar:**
-```bash
-cd /home/davidcubric/hedonic-overlapping
-python3.12 scripts/dblp_experiment.py --data_dir data/dblp --resolution_sweep --output results/dblp_sweep.json
-```
+### Próximos passos
 
-**Estado do OverlappingGame (já corrigido):**
-O `hedonic/overlapping.py` agora usa o backend C corretamente via `GraphBase.community_leiden_overlapping()`.
-Arquivo: `~/.local/lib/python3.12/site-packages/hedonic/overlapping.py`
-
----
-
-## ⚡ PRÓXIMA SESSÃO — Fase 3 (graphobject.c)
-
-**Objetivo:** expor `igraph_community_leiden_overlapping` ao Python retornando `VertexCover`.
-
-**Tudo já está pronto para começar:**
-- Função C compilada em `libigraph.a` ✅
-- Conversores existem com nomes corretos ✅
-  - `igraphmodule_PyObject_to_vector_int_list_t()` — Python list → C
-  - `igraphmodule_vector_int_list_t_to_PyList()` — C → Python list
-- Skeleton do wrapper já escrito no CLAUDE.md (seção Fase 3) ✅
-- Wrapper Python (`community.py`) já escrito em `python_patch/community_overlapping.py` ✅
-
-**4 passos na ordem:**
-
-1. **Inserir wrapper em `graphobject.c`** — linha 13574 é onde `community_leiden` está definida; inserir logo abaixo (linha ~13700)
-2. **Registrar na tabela de métodos** — linha 18551 é onde `community_leiden` está registrada; inserir logo abaixo
-3. **Adicionar wrapper Python em `community.py`** — copiar de `python_patch/community_overlapping.py`
-4. **Recompilar e testar:**
+1. **Escalar experimento de subgrafos** — mais comunidades e níveis:
    ```bash
-   cd /home/davidcubric/python-igraph
-   python3.12 -m pip install -e . --no-build-isolation
-   python3.12 scripts/test_small.py
+   python3.12 scripts/subgraph_experiment.py \
+     --data_dir data/dblp --levels 1 --n_communities 100 --resolution 0.1
+   python3.12 scripts/subgraph_experiment.py \
+     --data_dir data/dblp --levels 2 --n_communities 100 --resolution 0.1
    ```
 
-**Atenção:** os binários de build em `/tmp/` são perdidos ao reiniciar. Recriar com:
-```bash
-cd /tmp && apt-get download bison flex m4
-dpkg -x bison_*.deb ./bison_pkg && dpkg -x flex_*.deb ./flex_pkg && dpkg -x m4_*.deb ./m4_pkg
-export PATH="/tmp/m4_pkg/usr/bin:/tmp/bison_pkg/usr/bin:/tmp/flex_pkg/usr/bin:$PATH"
-export BISON_PKGDATADIR=/tmp/bison_pkg/usr/share/bison && export M4=/tmp/m4_pkg/usr/bin/m4
-```
+2. **Commit das mudanças pendentes no igraph C fork** — `remove_fast` + logs de progresso não foram commitados ainda:
+   ```bash
+   cd /home/davidcubric/igraph
+   git add src/community/leiden.c
+   git commit -m "perf: usar remove_fast (O(1)) e adicionar logs de progresso"
+   git push davidrussorj overlapping
+   ```
+
+3. **Escrever o paper** com Sadoc — usar os resultados de subgrafos como validação empírica.
 
 ---
 
@@ -88,8 +53,8 @@ Trabalho conjunto entre o dono do repositório (implementação) e Sadoc (teoria
 | Repositório | URL | Branch | Status |
 |-------------|-----|--------|--------|
 | Este repo (patches + experimentos) | https://github.com/davidrussorj/hedonic-overlapping | `main` | ✅ atualizado |
-| igraph C fork | https://github.com/davidrussorj/igraph | `overlapping` | ✅ Fase 2 commitada |
-| python-igraph fork | https://github.com/davidrussorj/python-igraph | — | ❌ Fase 3 pendente |
+| igraph C fork | https://github.com/davidrussorj/igraph | `overlapping` | ⚠️ mudanças locais não commitadas (remove_fast + logs) |
+| python-igraph fork | https://github.com/davidrussorj/python-igraph | `lucas` | ✅ wrapper commitado e no GitHub |
 | hedonic lib (upstream) | https://github.com/lucaslopes/hedonic | — | OverlappingGame instalada localmente |
 
 ---
@@ -107,16 +72,17 @@ hedonic-overlapping/          ← github.com/davidrussorj/hedonic-overlapping
 ├── hedonic_ext/
 │   └── overlapping_game.py   ← classe OverlappingGame (495 linhas, fonte da verdade)
 └── scripts/
-    ├── test_small.py         ← validação em grafos pequenos (roda agora)
-    └── dblp_experiment.py    ← experimento DBLP (200 linhas)
+    ├── test_small.py              ← validação em grafos pequenos
+    ├── dblp_experiment.py         ← experimento sweep no DBLP completo (317k nós)
+    └── subgraph_experiment.py     ← experimento em sub-redes L-hop (recomendado)
 
-/home/davidcubric/igraph/                     ← clone do fork C (lucaslopes/igraph)
-  branch: overlapping                         ← nossa branch com a Fase 2
-  remote davidrussorj → github.com/davidrussorj/igraph
+/home/davidcubric/igraph/                     ← clone do fork C
+  branch: overlapping
+  ⚠️ leiden.c tem mudanças locais não commitadas: remove_fast + logs de progresso
 
-/home/davidcubric/python-igraph/              ← clone do fork Python (lucaslopes/python-igraph)
-  branch: lucas                               ← sem mudanças commitadas ainda (Fase 3)
-  vendor/install/igraph/lib/libigraph.a       ← biblioteca compilada com nossa função
+/home/davidcubric/python-igraph/              ← clone do fork Python
+  branch: lucas                               ← wrapper commitado e no GitHub
+  vendor/install/igraph/lib/libigraph.a       ← IMPORTANTE: copiar após recompilar igraph
 ```
 
 ---
@@ -254,132 +220,6 @@ O linker só inclui símbolos da `libigraph.a` que são referenciados pelo códi
 
 ---
 
-## O que NÃO está feito ❌
-
-### Fase 3 — Wrapper Python em `graphobject.c` (próximo passo)
-
-**Repositório:** `davidrussorj/python-igraph` (ainda não criado — fork de `lucaslopes/python-igraph`)
-**Arquivo:** `src/_igraph/graphobject.c`
-
-Adicionar função `igraphmodule_Graph_community_leiden_overlapping()` seguindo o padrão
-de `igraphmodule_Graph_community_leiden()`.
-
-**Etapas:**
-
-1. Criar fork `davidrussorj/python-igraph` no GitHub
-2. Adicionar a função em `graphobject.c` (esqueleto abaixo)
-3. Registrar a função na tabela de métodos do objeto Graph
-4. Adicionar wrapper Python em `src/igraph/community.py` (já escrito em `python_patch/community_overlapping.py`)
-5. Rebuild com `pip install -e . --no-build-isolation`
-
-**Esqueleto do wrapper `graphobject.c`:**
-
-```c
-/** \ingroup python_interface_graph
- * \brief Finds overlapping communities via vectorized hedonic game (CPM)
- */
-PyObject *igraphmodule_Graph_community_leiden_overlapping(
-    igraphmodule_GraphObject *self, PyObject *args, PyObject *kwds)
-{
-  static char *kwlist[] = {
-    "resolution", "n_iterations", "weights", "initial_cover", NULL
-  };
-  PyObject *weights_o = Py_None;
-  PyObject *initial_cover_o = Py_None;
-  PyObject *result_o;
-  double resolution = 1.0;
-  long int n_iterations = -1;
-  igraph_vector_t weights;
-  igraph_vector_int_list_t initial_cover, cover;
-  igraph_real_t quality;
-  igraph_bool_t has_weights = false;
-
-  if (!PyArg_ParseTupleAndKeywords(args, kwds, "|dlOO", kwlist,
-        &resolution, &n_iterations, &weights_o, &initial_cover_o))
-    return NULL;
-
-  /* Convert edge weights */
-  if (weights_o != Py_None) {
-    if (igraphmodule_attrib_to_vector_t(weights_o, self, &weights,
-          ATTRIBUTE_TYPE_EDGE)) return NULL;
-    has_weights = true;
-  }
-
-  /* Convert initial_cover (Python list-of-lists → igraph_vector_int_list_t) */
-  igraph_vector_int_list_init(&initial_cover, 0);
-  if (initial_cover_o != Py_None) {
-    if (igraphmodule_PyObject_to_vector_int_list_t(initial_cover_o, &initial_cover)) {
-      if (has_weights) igraph_vector_destroy(&weights);
-      igraph_vector_int_list_destroy(&initial_cover);
-      return NULL;
-    }
-  }
-
-  /* Allocate output cover */
-  if (igraph_vector_int_list_init(&cover, 0)) {
-    if (has_weights) igraph_vector_destroy(&weights);
-    igraph_vector_int_list_destroy(&initial_cover);
-    return NULL;
-  }
-
-  /* Call C function */
-  if (igraph_community_leiden_overlapping(
-        &self->g,
-        has_weights ? &weights : NULL,
-        NULL,                   /* node weights = 1 */
-        (igraph_real_t)resolution,
-        (igraph_integer_t)n_iterations,
-        initial_cover_o != Py_None ? &initial_cover : NULL,
-        &cover,
-        &quality)) {
-    igraphmodule_handle_igraph_error();
-    if (has_weights) igraph_vector_destroy(&weights);
-    igraph_vector_int_list_destroy(&initial_cover);
-    igraph_vector_int_list_destroy(&cover);
-    return NULL;
-  }
-
-  /* Convert output cover → Python list-of-lists */
-  result_o = igraphmodule_vector_int_list_t_to_PyList(&cover);
-
-  /* Cleanup */
-  if (has_weights) igraph_vector_destroy(&weights);
-  igraph_vector_int_list_destroy(&initial_cover);
-  igraph_vector_int_list_destroy(&cover);
-
-  /* Return (cover_list, quality) */
-  return Py_BuildValue("(Od)", result_o, (double)quality);
-}
-```
-
-**Registrar na tabela de métodos** (buscar por `community_leiden` em `graphobject.c`):
-```c
-{"community_leiden_overlapping",
- (PyCFunction) igraphmodule_Graph_community_leiden_overlapping,
- METH_VARARGS | METH_KEYWORDS,
- "community_leiden_overlapping(resolution, n_iterations, weights, initial_cover)\n--\n\n"
- "Detects overlapping communities via vectorized hedonic game.\n"},
-```
-
-**Wrapper Python** (`src/igraph/community.py`) — já escrito em `python_patch/community_overlapping.py`.
-Retorna `VertexCover` em vez de `VertexClustering`.
-
----
-
-### Fase 4 — Experimento DBLP
-
-Não depende da Fase 3 — pode rodar com Python puro (lento para 317k nós).
-
-```bash
-cd /home/davidcubric/hedonic-overlapping
-mkdir -p data/dblp && cd data/dblp
-wget https://snap.stanford.edu/data/com-dblp.ungraph.txt.gz
-wget https://snap.stanford.edu/data/com-dblp.cmty.txt.gz
-cd ..
-python3.12 scripts/dblp_experiment.py --data_dir data/dblp --resolution_sweep
-```
-
----
 
 ## Como executar o que já funciona
 
@@ -430,7 +270,18 @@ cp hedonic_ext/overlapping_game.py \
    ~/.local/lib/python3.12/site-packages/hedonic/overlapping.py
 ```
 
-### 6. Recompilar após reiniciar o sistema
+### 6. vendor/libigraph.a — CRÍTICO ao recompilar
+
+O python-igraph linka contra `vendor/install/igraph/lib/libigraph.a`, NÃO contra o build do igraph C.
+Após qualquer recompilação do igraph C, copiar manualmente:
+```bash
+cp /home/davidcubric/igraph/build/src/libigraph.a \
+   /home/davidcubric/python-igraph/vendor/install/igraph/lib/libigraph.a
+cd /home/davidcubric/python-igraph && python3.12 -m pip install -e . --no-build-isolation
+```
+Se esquecer isso, o python-igraph usa a versão antiga silenciosamente.
+
+### 7. Recompilar após reiniciar o sistema
 Os binários em `/tmp/` são perdidos. Recriar com:
 ```bash
 cd /tmp && apt-get download bison flex m4

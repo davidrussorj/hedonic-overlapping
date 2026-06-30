@@ -34,6 +34,54 @@ def log(msg: str, t0: float = None):
 
 
 # ---------------------------------------------------------------------------
+# Métricas sem Omega (Omega é O(n²) — inviável para 317k nós)
+# ---------------------------------------------------------------------------
+
+def _evaluate_no_omega(predicted, ground_truth, n_vertices):
+    pred_sets = [set(c) for c in predicted if c]
+    gt_sets   = [set(c) for c in ground_truth if c]
+
+    def best_f1(A, B):
+        total = 0.0
+        for a in A:
+            best = 0.0
+            for b in B:
+                inter = len(a & b)
+                if inter == 0:
+                    continue
+                p = inter / len(a)
+                r = inter / len(b)
+                f = 2 * p * r / (p + r)
+                if f > best:
+                    best = f
+            total += best
+        return total / len(A) if A else 0.0
+
+    def best_jaccard(A, B):
+        total = 0.0
+        for a in A:
+            best = 0.0
+            for b in B:
+                inter = len(a & b)
+                union = len(a | b)
+                j = inter / union if union else 0.0
+                if j > best:
+                    best = j
+            total += best
+        return total / len(A) if A else 0.0
+
+    f1 = (best_f1(pred_sets, gt_sets) + best_f1(gt_sets, pred_sets)) / 2.0
+    jaccard = (best_jaccard(pred_sets, gt_sets) + best_jaccard(gt_sets, pred_sets)) / 2.0
+    return {
+        "f1": f1,
+        "jaccard": jaccard,
+        "omega": None,
+        "n_predicted_comms": len(pred_sets),
+        "n_gt_comms": len(gt_sets),
+    }
+
+
+# ---------------------------------------------------------------------------
 # Data loading (com cache pickle para evitar recarregamento lento)
 # ---------------------------------------------------------------------------
 
@@ -211,11 +259,11 @@ def resolution_sweep(og, gt, resolutions, n_iter):
 
         log(f"  Calculando métricas …")
         t = time.time()
-        metrics = OverlappingGame.evaluate_cover(cover, gt, n)
+        metrics = _evaluate_no_omega(cover, gt, n)
         metrics["resolution"] = res
         metrics["quality"]    = og.quality_overlapping(cover, res)
         sweep.append(metrics)
-        log(f"  F1={metrics['f1']:.4f}  Omega={metrics['omega']:.4f}  "
+        log(f"  F1={metrics['f1']:.4f}  Jaccard={metrics['jaccard']:.4f}  "
             f"Q={metrics['quality']:.6f}  total={time.time()-t0:.1f}s", t)
 
     return sweep
@@ -229,7 +277,7 @@ def main():
     parser = argparse.ArgumentParser(description="DBLP overlapping community experiment")
     parser.add_argument("--data_dir",        default="./data/dblp")
     parser.add_argument("--resolution",      type=float, default=1e-4)
-    parser.add_argument("--n_iterations",    type=int,   default=-1)
+    parser.add_argument("--n_iterations",    type=int,   default=5)
     parser.add_argument("--resolution_sweep", action="store_true")
     parser.add_argument("--output",          default="results.json")
     args = parser.parse_args()
@@ -251,7 +299,7 @@ def main():
     if args.resolution_sweep:
         from hedonic.overlapping import OverlappingGame
         og = OverlappingGame(g)
-        resolutions = np.logspace(-5, -2, 10)
+        resolutions = np.logspace(-2, 0, 10)
         sweep = resolution_sweep(og, gt, resolutions, args.n_iterations)
         with open(args.output, "w") as f:
             json.dump({"resolution_sweep": sweep}, f, indent=2)
