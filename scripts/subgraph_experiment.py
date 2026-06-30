@@ -181,9 +181,13 @@ def run_one(g_full, gt_community, all_gt, levels, resolution, n_iterations, comm
 # Seleção de comunidades com sobreposição real no ground truth
 # ---------------------------------------------------------------------------
 
-def find_overlapping_communities(gt, min_overlap=2, min_size=5, max_size=200):
+def find_overlapping_communities(gt, min_overlap=2, min_overlap_ratio=0.0, min_size=5, max_size=200):
     """Retorna lista de (idx, {parceiro: n_nodes_compartilhados}) para comunidades
-    que compartilham >= min_overlap nós com pelo menos uma outra comunidade GT."""
+    que compartilham >= min_overlap nós com pelo menos uma outra comunidade GT.
+
+    min_overlap_ratio: overlap coefficient mínimo por par = interseção / min(|i|, |j|).
+    Garante interseção significativa independente do tamanho das comunidades.
+    """
 
     # índice invertido: vértice → lista de comunidades
     vertex_to_comms = {}
@@ -192,6 +196,8 @@ def find_overlapping_communities(gt, min_overlap=2, min_size=5, max_size=200):
             if v not in vertex_to_comms:
                 vertex_to_comms[v] = []
             vertex_to_comms[v].append(i)
+
+    gt_sizes = [len(c) for c in gt]
 
     result = []
     for i, comm in enumerate(gt):
@@ -202,7 +208,11 @@ def find_overlapping_communities(gt, min_overlap=2, min_size=5, max_size=200):
             for j in vertex_to_comms.get(v, []):
                 if j != i:
                     partners[j] = partners.get(j, 0) + 1
-        valid = {j: cnt for j, cnt in partners.items() if cnt >= min_overlap}
+        valid = {
+            j: cnt for j, cnt in partners.items()
+            if cnt >= min_overlap
+            and cnt / min(len(comm), gt_sizes[j]) >= min_overlap_ratio
+        }
         if valid:
             result.append((i, valid))
 
@@ -309,6 +319,9 @@ def main():
                         help="Selecionar apenas comunidades com sobreposição real no GT")
     parser.add_argument("--min_overlap",    type=int,   default=2,
                         help="Mínimo de nós compartilhados para considerar sobreposição")
+    parser.add_argument("--min_overlap_ratio", type=float, default=0.0,
+                        help="Overlap coefficient mínimo por par: interseção/min(|i|,|j|). "
+                             "Ex: 0.2 exige que pelo menos 20%% da menor comunidade seja compartilhada")
     parser.add_argument("--output",         default="results/subgraph_experiment.json")
     args = parser.parse_args()
 
@@ -341,7 +354,8 @@ def main():
         log(f"\n[select] Buscando comunidades com sobreposição real (min_overlap={args.min_overlap}) …")
         t_sel = time.time()
         overlapping_list = find_overlapping_communities(
-            gt, min_overlap=args.min_overlap, min_size=5, max_size=200
+            gt, min_overlap=args.min_overlap, min_overlap_ratio=args.min_overlap_ratio,
+            min_size=5, max_size=200
         )
         log(f"[select] {len(overlapping_list):,} comunidades com sobreposição encontradas  [{time.time()-t_sel:.1f}s]")
         rng = np.random.default_rng(42)

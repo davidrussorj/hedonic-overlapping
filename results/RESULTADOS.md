@@ -1,7 +1,7 @@
 # Resultados Experimentais — Jogo Hedônico Overlapping
 
 Dataset: DBLP (317.080 autores, 1.049.866 coautorias, 13.477 comunidades ground truth)
-Metodologia: sub-redes de 1-hop ao redor de comunidades ground truth selecionadas
+Metodologia: sub-redes L-hop ao redor de comunidades ground truth selecionadas
 
 ---
 
@@ -51,9 +51,52 @@ O Leiden parte de um F1 mais baixo nas comunidades com sobreposição real (0.26
 
 ---
 
+## Experimento 3 — Sobreposição com Coeficiente Mínimo (ratio ≥ 0.2)
+
+**Configuração:** 200 comunidades com interseção ≥ 20% do tamanho da menor comunidade do par. Garante sobreposição significativa independente do tamanho.
+
+| Método | F1 médio |
+|--------|----------|
+| Leiden não-overlapping | 0.2543 |
+| Hedônico overlapping | **0.3712** |
+| ΔF1 | **+0.1169** |
+
+- Melhorou em: **178/200 comunidades (89.0%)**
+- Equilíbrio de Nash: **200/200 (100%)**
+
+---
+
+## Experimento 4 — Vizinhança 2-hop (L=2)
+
+**Configuração:** 100 comunidades aleatórias com sub-redes expandidas 2 níveis de vizinhos.
+
+| Método | F1 médio |
+|--------|----------|
+| Leiden não-overlapping | 0.2916 |
+| Hedônico overlapping | 0.2674 |
+| ΔF1 | **-0.0242** |
+
+- Melhorou em: **49/100 comunidades (49.0%)**
+- Equilíbrio de Nash: **100/100 (100%)**
+
+**Interpretação:** com sub-redes maiores (2-hop), o algoritmo tem mais comunidades para gerenciar e o ruído supera o ganho do overlap. O nível 1-hop é o contexto ótimo para este dataset.
+
+---
+
+## Resumo geral
+
+| Experimento | n | L | Seleção | ΔF1 médio | Melhorou | Nash |
+|-------------|---|---|---------|-----------|----------|------|
+| Aleatório | 200 | 1 | aleatória | +0.108 | 84.5% | **100%** |
+| Overlapping real | 200 | 1 | ≥2 nós compartilhados | +0.125 | 88.0% | **100%** |
+| Overlap ratio | 200 | 1 | ratio ≥ 0.2 | +0.117 | 89.0% | **100%** |
+| 2-hop | 100 | 2 | aleatória | -0.024 | 49.0% | **100%** |
+
+---
+
 ## Garantia de Equilíbrio de Nash
 
-Em **400/400 experimentos (100%)** o cover final é um equilíbrio de Nash do jogo hedônico vetorizado — nenhum vértice tem incentivo para entrar ou sair de qualquer comunidade. Isso confirma empiricamente a garantia teórica central do modelo.
+Em **700/700 experimentos (100%)** o cover final é um equilíbrio de Nash do jogo hedônico vetorizado — nenhum vértice tem incentivo para entrar ou sair de qualquer comunidade. Isso confirma empiricamente a garantia teórica central do modelo.
 
 ---
 
