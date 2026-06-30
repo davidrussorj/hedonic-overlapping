@@ -1,0 +1,5202 @@
+[
+  {
+    "community_idx": 4765,
+    "gt_size": 10,
+    "subgraph_nodes": 83,
+    "subgraph_edges": 182,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.21710497835497838,
+      "jaccard": 0.13306874923882597,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0005218982696533203
+    },
+    "hedonic": {
+      "f1": 0.4078806833596297,
+      "jaccard": 0.2604810183296195,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.0008916854858398438
+    },
+    "delta_f1": 0.1907757050046513,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6677,
+    "gt_size": 6,
+    "subgraph_nodes": 46,
+    "subgraph_edges": 145,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2741466957153232,
+      "jaccard": 0.17768036701860232,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0004665851593017578
+    },
+    "hedonic": {
+      "f1": 0.39719979719979714,
+      "jaccard": 0.24858803084609538,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0007479190826416016
+    },
+    "delta_f1": 0.12305310148447396,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5860,
+    "gt_size": 6,
+    "subgraph_nodes": 15,
+    "subgraph_edges": 43,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.7130681818181819,
+      "jaccard": 0.6416666666666667,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00012087821960449219
+    },
+    "hedonic": {
+      "f1": 0.4598214285714286,
+      "jaccard": 0.31666666666666665,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00013780593872070312
+    },
+    "delta_f1": -0.2532467532467533,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1149,
+    "gt_size": 52,
+    "subgraph_nodes": 1886,
+    "subgraph_edges": 8687,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.04541397195998792,
+      "jaccard": 0.023714345236770858,
+      "n_pred": 411,
+      "n_gt": 1,
+      "n_communities": 411,
+      "time_s": 0.0498194694519043
+    },
+    "hedonic": {
+      "f1": 0.13323248585785313,
+      "jaccard": 0.07259311536251935,
+      "n_pred": 420,
+      "n_gt": 1,
+      "n_communities": 420,
+      "time_s": 0.13511395454406738
+    },
+    "delta_f1": 0.08781851389786521,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1152,
+    "gt_size": 11,
+    "subgraph_nodes": 82,
+    "subgraph_edges": 161,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1765924293098206,
+      "jaccard": 0.10376435159043855,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0007765293121337891
+    },
+    "hedonic": {
+      "f1": 0.29518431708364967,
+      "jaccard": 0.17400169284962086,
+      "n_pred": 24,
+      "n_gt": 1,
+      "n_communities": 24,
+      "time_s": 0.0008153915405273438
+    },
+    "delta_f1": 0.11859188777382906,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4544,
+    "gt_size": 17,
+    "subgraph_nodes": 242,
+    "subgraph_edges": 833,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1179002134035847,
+      "jaccard": 0.06570746082803777,
+      "n_pred": 55,
+      "n_gt": 1,
+      "n_communities": 55,
+      "time_s": 0.002360105514526367
+    },
+    "hedonic": {
+      "f1": 0.3124275285390935,
+      "jaccard": 0.1924421061597315,
+      "n_pred": 55,
+      "n_gt": 1,
+      "n_communities": 55,
+      "time_s": 0.006236553192138672
+    },
+    "delta_f1": 0.1945273151355088,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6716,
+    "gt_size": 6,
+    "subgraph_nodes": 18,
+    "subgraph_edges": 43,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4285714285714286,
+      "jaccard": 0.30000000000000004,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00013256072998046875
+    },
+    "hedonic": {
+      "f1": 0.7053571428571428,
+      "jaccard": 0.55,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.000179290771484375
+    },
+    "delta_f1": 0.2767857142857142,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8763,
+    "gt_size": 36,
+    "subgraph_nodes": 407,
+    "subgraph_edges": 1309,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.14805901107719663,
+      "jaccard": 0.08516013773143166,
+      "n_pred": 67,
+      "n_gt": 1,
+      "n_communities": 67,
+      "time_s": 0.004171133041381836
+    },
+    "hedonic": {
+      "f1": 0.20270983926811542,
+      "jaccard": 0.11554708378485481,
+      "n_pred": 72,
+      "n_gt": 1,
+      "n_communities": 72,
+      "time_s": 0.007928133010864258
+    },
+    "delta_f1": 0.05465082819091879,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2981,
+    "gt_size": 6,
+    "subgraph_nodes": 76,
+    "subgraph_edges": 248,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.16809116809116809,
+      "jaccard": 0.09817037182766084,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.0006139278411865234
+    },
+    "hedonic": {
+      "f1": 0.3836375824522376,
+      "jaccard": 0.24416136227489801,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0008151531219482422
+    },
+    "delta_f1": 0.21554641436106953,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8046,
+    "gt_size": 12,
+    "subgraph_nodes": 38,
+    "subgraph_edges": 81,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3554538520213577,
+      "jaccard": 0.23509915329768272,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.000377655029296875
+    },
+    "hedonic": {
+      "f1": 0.547062463502681,
+      "jaccard": 0.39632411067193674,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00046515464782714844
+    },
+    "delta_f1": 0.19160861148132324,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7510,
+    "gt_size": 6,
+    "subgraph_nodes": 92,
+    "subgraph_edges": 214,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.14503657500151765,
+      "jaccard": 0.08234203101530467,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0005776882171630859
+    },
+    "hedonic": {
+      "f1": 0.29708718720156624,
+      "jaccard": 0.17657004830917875,
+      "n_pred": 18,
+      "n_gt": 1,
+      "n_communities": 18,
+      "time_s": 0.0007681846618652344
+    },
+    "delta_f1": 0.1520506122000486,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12343,
+    "gt_size": 7,
+    "subgraph_nodes": 27,
+    "subgraph_edges": 50,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.40476190476190477,
+      "jaccard": 0.3,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00017976760864257812
+    },
+    "hedonic": {
+      "f1": 0.6536514210427254,
+      "jaccard": 0.49168956043956047,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00023317337036132812
+    },
+    "delta_f1": 0.24888951628082068,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7361,
+    "gt_size": 7,
+    "subgraph_nodes": 34,
+    "subgraph_edges": 85,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.28475935828877,
+      "jaccard": 0.18267973856209152,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00041103363037109375
+    },
+    "hedonic": {
+      "f1": 0.4126871360460448,
+      "jaccard": 0.2810338345864662,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00026154518127441406
+    },
+    "delta_f1": 0.12792777775727476,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10552,
+    "gt_size": 21,
+    "subgraph_nodes": 275,
+    "subgraph_edges": 870,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.13668485723456134,
+      "jaccard": 0.07770682995937296,
+      "n_pred": 61,
+      "n_gt": 1,
+      "n_communities": 61,
+      "time_s": 0.002134561538696289
+    },
+    "hedonic": {
+      "f1": 0.19047316861039165,
+      "jaccard": 0.10643568476377763,
+      "n_pred": 61,
+      "n_gt": 1,
+      "n_communities": 61,
+      "time_s": 0.004834175109863281
+    },
+    "delta_f1": 0.05378831137583032,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10287,
+    "gt_size": 6,
+    "subgraph_nodes": 11,
+    "subgraph_edges": 29,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00010347366333007812
+    },
+    "hedonic": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00010204315185546875
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5014,
+    "gt_size": 15,
+    "subgraph_nodes": 72,
+    "subgraph_edges": 134,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.21483850652271708,
+      "jaccard": 0.12754942218433268,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.00043129920959472656
+    },
+    "hedonic": {
+      "f1": 0.3462916969672485,
+      "jaccard": 0.21874949677938807,
+      "n_pred": 16,
+      "n_gt": 1,
+      "n_communities": 16,
+      "time_s": 0.0005705356597900391
+    },
+    "delta_f1": 0.1314531904445314,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10458,
+    "gt_size": 6,
+    "subgraph_nodes": 18,
+    "subgraph_edges": 34,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.45833333333333337,
+      "jaccard": 0.3111888111888112,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00022530555725097656
+    },
+    "hedonic": {
+      "f1": 0.5888888888888888,
+      "jaccard": 0.41758241758241754,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00022172927856445312
+    },
+    "delta_f1": 0.13055555555555542,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9337,
+    "gt_size": 11,
+    "subgraph_nodes": 28,
+    "subgraph_edges": 115,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5125187756261924,
+      "jaccard": 0.38100012732365673,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00019311904907226562
+    },
+    "hedonic": {
+      "f1": 0.546875,
+      "jaccard": 0.39682539682539686,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.0002834796905517578
+    },
+    "delta_f1": 0.03435622437380759,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10556,
+    "gt_size": 16,
+    "subgraph_nodes": 93,
+    "subgraph_edges": 225,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2668216727040256,
+      "jaccard": 0.17026583182292526,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0009572505950927734
+    },
+    "hedonic": {
+      "f1": 0.320736815347303,
+      "jaccard": 0.1985212856630078,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0012671947479248047
+    },
+    "delta_f1": 0.05391514264327735,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2869,
+    "gt_size": 12,
+    "subgraph_nodes": 368,
+    "subgraph_edges": 1879,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.30631208694308115,
+      "jaccard": 0.21830769463249516,
+      "n_pred": 80,
+      "n_gt": 1,
+      "n_communities": 80,
+      "time_s": 0.0038671493530273438
+    },
+    "hedonic": {
+      "f1": 0.274272829618124,
+      "jaccard": 0.16886406393830014,
+      "n_pred": 79,
+      "n_gt": 1,
+      "n_communities": 79,
+      "time_s": 0.012674093246459961
+    },
+    "delta_f1": -0.03203925732495716,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11430,
+    "gt_size": 14,
+    "subgraph_nodes": 73,
+    "subgraph_edges": 177,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17812364859876173,
+      "jaccard": 0.10098279480169417,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.00047969818115234375
+    },
+    "hedonic": {
+      "f1": 0.34415136684044245,
+      "jaccard": 0.21825288562876066,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.0005204677581787109
+    },
+    "delta_f1": 0.16602771824168072,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11043,
+    "gt_size": 9,
+    "subgraph_nodes": 26,
+    "subgraph_edges": 52,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4258373205741627,
+      "jaccard": 0.30470085470085473,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00019788742065429688
+    },
+    "hedonic": {
+      "f1": 0.7309782608695652,
+      "jaccard": 0.6225008544087491,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00026035308837890625
+    },
+    "delta_f1": 0.3051409402954025,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 966,
+    "gt_size": 13,
+    "subgraph_nodes": 119,
+    "subgraph_edges": 280,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15597536414111485,
+      "jaccard": 0.08903326527873628,
+      "n_pred": 24,
+      "n_gt": 1,
+      "n_communities": 24,
+      "time_s": 0.0007688999176025391
+    },
+    "hedonic": {
+      "f1": 0.40105840865883224,
+      "jaccard": 0.2656351849303476,
+      "n_pred": 24,
+      "n_gt": 1,
+      "n_communities": 24,
+      "time_s": 0.001051187515258789
+    },
+    "delta_f1": 0.2450830445177174,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9724,
+    "gt_size": 7,
+    "subgraph_nodes": 126,
+    "subgraph_edges": 500,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1748528639976008,
+      "jaccard": 0.10266525549613785,
+      "n_pred": 16,
+      "n_gt": 1,
+      "n_communities": 16,
+      "time_s": 0.001089334487915039
+    },
+    "hedonic": {
+      "f1": 0.18107928446052124,
+      "jaccard": 0.10029171691213959,
+      "n_pred": 18,
+      "n_gt": 1,
+      "n_communities": 18,
+      "time_s": 0.0014214515686035156
+    },
+    "delta_f1": 0.0062264204629204345,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 442,
+    "gt_size": 9,
+    "subgraph_nodes": 120,
+    "subgraph_edges": 327,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1862768615692154,
+      "jaccard": 0.1121510434010434,
+      "n_pred": 30,
+      "n_gt": 1,
+      "n_communities": 30,
+      "time_s": 0.0008955001831054688
+    },
+    "hedonic": {
+      "f1": 0.4282106224870632,
+      "jaccard": 0.27499987731466335,
+      "n_pred": 30,
+      "n_gt": 1,
+      "n_communities": 30,
+      "time_s": 0.0014426708221435547
+    },
+    "delta_f1": 0.2419337609178478,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2087,
+    "gt_size": 19,
+    "subgraph_nodes": 291,
+    "subgraph_edges": 929,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1423304597566677,
+      "jaccard": 0.08185385371214249,
+      "n_pred": 66,
+      "n_gt": 1,
+      "n_communities": 66,
+      "time_s": 0.003699064254760742
+    },
+    "hedonic": {
+      "f1": 0.22307347887528356,
+      "jaccard": 0.13081541620297726,
+      "n_pred": 61,
+      "n_gt": 1,
+      "n_communities": 61,
+      "time_s": 0.0038743019104003906
+    },
+    "delta_f1": 0.08074301911861587,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2124,
+    "gt_size": 8,
+    "subgraph_nodes": 29,
+    "subgraph_edges": 76,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4363636363636364,
+      "jaccard": 0.34285714285714286,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00023865699768066406
+    },
+    "hedonic": {
+      "f1": 0.6387205387205388,
+      "jaccard": 0.49009287925696593,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00024366378784179688
+    },
+    "delta_f1": 0.2023569023569024,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12967,
+    "gt_size": 6,
+    "subgraph_nodes": 20,
+    "subgraph_edges": 40,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5342990342990342,
+      "jaccard": 0.40766178266178266,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.000164031982421875
+    },
+    "hedonic": {
+      "f1": 0.4509803921568628,
+      "jaccard": 0.29212454212454214,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00015020370483398438
+    },
+    "delta_f1": -0.08331864214217144,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7342,
+    "gt_size": 6,
+    "subgraph_nodes": 89,
+    "subgraph_edges": 305,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.21091617933723195,
+      "jaccard": 0.1288503435562259,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0004069805145263672
+    },
+    "hedonic": {
+      "f1": 0.4235131038423715,
+      "jaccard": 0.29056068541871993,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0009243488311767578
+    },
+    "delta_f1": 0.21259692450513956,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1163,
+    "gt_size": 6,
+    "subgraph_nodes": 114,
+    "subgraph_edges": 329,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15935064935064935,
+      "jaccard": 0.09250821018062397,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.001743316650390625
+    },
+    "hedonic": {
+      "f1": 0.15104924752655047,
+      "jaccard": 0.0838216144882316,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.0025146007537841797
+    },
+    "delta_f1": -0.008301401824098886,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4486,
+    "gt_size": 8,
+    "subgraph_nodes": 12,
+    "subgraph_edges": 38,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.0001418590545654297
+    },
+    "hedonic": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.0001437664031982422
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5325,
+    "gt_size": 18,
+    "subgraph_nodes": 57,
+    "subgraph_edges": 228,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5454545454545454,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.0002982616424560547
+    },
+    "hedonic": {
+      "f1": 0.872300752883327,
+      "jaccard": 0.816202290479265,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.0005002021789550781
+    },
+    "delta_f1": 0.32684620742878157,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2399,
+    "gt_size": 8,
+    "subgraph_nodes": 63,
+    "subgraph_edges": 98,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.23994510084735649,
+      "jaccard": 0.1517429193899782,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.0006239414215087891
+    },
+    "hedonic": {
+      "f1": 0.29389217644338195,
+      "jaccard": 0.173006253006253,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.001068115234375
+    },
+    "delta_f1": 0.05394707559602546,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10459,
+    "gt_size": 6,
+    "subgraph_nodes": 16,
+    "subgraph_edges": 36,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4235294117647058,
+      "jaccard": 0.32727272727272727,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00014352798461914062
+    },
+    "hedonic": {
+      "f1": 0.7316176470588235,
+      "jaccard": 0.5772727272727273,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00016617774963378906
+    },
+    "delta_f1": 0.30808823529411766,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6002,
+    "gt_size": 6,
+    "subgraph_nodes": 147,
+    "subgraph_edges": 522,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11410718677154663,
+      "jaccard": 0.06387332030714384,
+      "n_pred": 34,
+      "n_gt": 1,
+      "n_communities": 34,
+      "time_s": 0.0010876655578613281
+    },
+    "hedonic": {
+      "f1": 0.25617359699558717,
+      "jaccard": 0.14707598755720275,
+      "n_pred": 34,
+      "n_gt": 1,
+      "n_communities": 34,
+      "time_s": 0.0025064945220947266
+    },
+    "delta_f1": 0.14206641022404054,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5589,
+    "gt_size": 6,
+    "subgraph_nodes": 79,
+    "subgraph_edges": 252,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15324675324675324,
+      "jaccard": 0.0885547201336675,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.0006089210510253906
+    },
+    "hedonic": {
+      "f1": 0.21108161733161734,
+      "jaccard": 0.11825343773873186,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.0009701251983642578
+    },
+    "delta_f1": 0.0578348640848641,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8893,
+    "gt_size": 8,
+    "subgraph_nodes": 71,
+    "subgraph_edges": 278,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.30383748196248195,
+      "jaccard": 0.20493672993672996,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0005350112915039062
+    },
+    "hedonic": {
+      "f1": 0.2256024311945365,
+      "jaccard": 0.1306701402489446,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0007154941558837891
+    },
+    "delta_f1": -0.07823505076794546,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12103,
+    "gt_size": 6,
+    "subgraph_nodes": 108,
+    "subgraph_edges": 368,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17439256283342303,
+      "jaccard": 0.1025133596562168,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.0010902881622314453
+    },
+    "hedonic": {
+      "f1": 0.12541170693445158,
+      "jaccard": 0.06750554547880866,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0018572807312011719
+    },
+    "delta_f1": -0.04898085589897144,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11844,
+    "gt_size": 6,
+    "subgraph_nodes": 43,
+    "subgraph_edges": 137,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2926470588235294,
+      "jaccard": 0.18908147773279355,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0003440380096435547
+    },
+    "hedonic": {
+      "f1": 0.5023867942402426,
+      "jaccard": 0.3422911899313501,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0004093647003173828
+    },
+    "delta_f1": 0.20973973541671315,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3600,
+    "gt_size": 6,
+    "subgraph_nodes": 7,
+    "subgraph_edges": 17,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.923076923076923,
+      "jaccard": 0.8571428571428571,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00011348724365234375
+    },
+    "hedonic": {
+      "f1": 0.923076923076923,
+      "jaccard": 0.8571428571428571,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00011849403381347656
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4168,
+    "gt_size": 14,
+    "subgraph_nodes": 93,
+    "subgraph_edges": 201,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1993333333333333,
+      "jaccard": 0.11887104743083005,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0005826950073242188
+    },
+    "hedonic": {
+      "f1": 0.5135220443835372,
+      "jaccard": 0.3750261386358965,
+      "n_pred": 26,
+      "n_gt": 1,
+      "n_communities": 26,
+      "time_s": 0.0013699531555175781
+    },
+    "delta_f1": 0.3141887110502039,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2130,
+    "gt_size": 139,
+    "subgraph_nodes": 2331,
+    "subgraph_edges": 10985,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.07020482677737307,
+      "jaccard": 0.037633982192937177,
+      "n_pred": 499,
+      "n_gt": 1,
+      "n_communities": 499,
+      "time_s": 0.08526778221130371
+    },
+    "hedonic": {
+      "f1": 0.15774911612657727,
+      "jaccard": 0.08646261421745093,
+      "n_pred": 485,
+      "n_gt": 1,
+      "n_communities": 485,
+      "time_s": 0.253481388092041
+    },
+    "delta_f1": 0.0875442893492042,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6661,
+    "gt_size": 8,
+    "subgraph_nodes": 46,
+    "subgraph_edges": 190,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.26206896551724135,
+      "jaccard": 0.16319444444444445,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0003552436828613281
+    },
+    "hedonic": {
+      "f1": 0.33706959706959705,
+      "jaccard": 0.20524642289348172,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0005741119384765625
+    },
+    "delta_f1": 0.0750006315523557,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11523,
+    "gt_size": 9,
+    "subgraph_nodes": 17,
+    "subgraph_edges": 30,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5852130325814537,
+      "jaccard": 0.49766899766899764,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00014257431030273438
+    },
+    "hedonic": {
+      "f1": 0.7192602718918508,
+      "jaccard": 0.564957264957265,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00015211105346679688
+    },
+    "delta_f1": 0.13404723931039708,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1610,
+    "gt_size": 12,
+    "subgraph_nodes": 142,
+    "subgraph_edges": 301,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.14005269581119334,
+      "jaccard": 0.07949713368868361,
+      "n_pred": 41,
+      "n_gt": 1,
+      "n_communities": 41,
+      "time_s": 0.0012271404266357422
+    },
+    "hedonic": {
+      "f1": 0.26383666869457,
+      "jaccard": 0.1553495567442128,
+      "n_pred": 41,
+      "n_gt": 1,
+      "n_communities": 41,
+      "time_s": 0.0017294883728027344
+    },
+    "delta_f1": 0.12378397288337667,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 858,
+    "gt_size": 63,
+    "subgraph_nodes": 545,
+    "subgraph_edges": 1528,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.07937434953918478,
+      "jaccard": 0.042649017846709526,
+      "n_pred": 120,
+      "n_gt": 1,
+      "n_communities": 120,
+      "time_s": 0.006665706634521484
+    },
+    "hedonic": {
+      "f1": 0.24319648363710156,
+      "jaccard": 0.14204694050819977,
+      "n_pred": 128,
+      "n_gt": 1,
+      "n_communities": 128,
+      "time_s": 0.012087345123291016
+    },
+    "delta_f1": 0.1638221340979168,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9365,
+    "gt_size": 13,
+    "subgraph_nodes": 69,
+    "subgraph_edges": 167,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2650401001241337,
+      "jaccard": 0.17203043160584072,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.000946044921875
+    },
+    "hedonic": {
+      "f1": 0.2580993578025402,
+      "jaccard": 0.15070103142471564,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.001070261001586914
+    },
+    "delta_f1": -0.006940742321593529,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10686,
+    "gt_size": 7,
+    "subgraph_nodes": 13,
+    "subgraph_edges": 26,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.728021978021978,
+      "jaccard": 0.6620879120879121,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00011658668518066406
+    },
+    "hedonic": {
+      "f1": 0.7000000000000001,
+      "jaccard": 0.5384615384615384,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00012540817260742188
+    },
+    "delta_f1": -0.028021978021977922,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6037,
+    "gt_size": 17,
+    "subgraph_nodes": 108,
+    "subgraph_edges": 303,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.22179716254951365,
+      "jaccard": 0.13556380972437826,
+      "n_pred": 22,
+      "n_gt": 1,
+      "n_communities": 22,
+      "time_s": 0.0008196830749511719
+    },
+    "hedonic": {
+      "f1": 0.23949225835250906,
+      "jaccard": 0.13929384080630103,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0012707710266113281
+    },
+    "delta_f1": 0.017695095802995414,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 743,
+    "gt_size": 10,
+    "subgraph_nodes": 182,
+    "subgraph_edges": 597,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.18137759170653908,
+      "jaccard": 0.10822983010483012,
+      "n_pred": 40,
+      "n_gt": 1,
+      "n_communities": 40,
+      "time_s": 0.001989603042602539
+    },
+    "hedonic": {
+      "f1": 0.22856318591326583,
+      "jaccard": 0.1368483677619,
+      "n_pred": 40,
+      "n_gt": 1,
+      "n_communities": 40,
+      "time_s": 0.0028586387634277344
+    },
+    "delta_f1": 0.047185594206726744,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3053,
+    "gt_size": 27,
+    "subgraph_nodes": 445,
+    "subgraph_edges": 1443,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1656369415847888,
+      "jaccard": 0.09797006237031555,
+      "n_pred": 93,
+      "n_gt": 1,
+      "n_communities": 93,
+      "time_s": 0.0042572021484375
+    },
+    "hedonic": {
+      "f1": 0.34978420183965875,
+      "jaccard": 0.2347769863047482,
+      "n_pred": 92,
+      "n_gt": 1,
+      "n_communities": 92,
+      "time_s": 0.007229804992675781
+    },
+    "delta_f1": 0.18414726025486994,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5663,
+    "gt_size": 6,
+    "subgraph_nodes": 19,
+    "subgraph_edges": 41,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.53125,
+      "jaccard": 0.39166666666666666,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.000171661376953125
+    },
+    "hedonic": {
+      "f1": 0.5937499999999999,
+      "jaccard": 0.4666666666666667,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00019311904907226562
+    },
+    "delta_f1": 0.06249999999999989,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3882,
+    "gt_size": 12,
+    "subgraph_nodes": 174,
+    "subgraph_edges": 487,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15564308882810815,
+      "jaccard": 0.09029137753199018,
+      "n_pred": 44,
+      "n_gt": 1,
+      "n_communities": 44,
+      "time_s": 0.0019066333770751953
+    },
+    "hedonic": {
+      "f1": 0.25003708291405524,
+      "jaccard": 0.14476153561953775,
+      "n_pred": 39,
+      "n_gt": 1,
+      "n_communities": 39,
+      "time_s": 0.0028209686279296875
+    },
+    "delta_f1": 0.09439399408594709,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9383,
+    "gt_size": 6,
+    "subgraph_nodes": 12,
+    "subgraph_edges": 28,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.6666666666666667,
+      "jaccard": 0.5584415584415585,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00010204315185546875
+    },
+    "hedonic": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00010704994201660156
+    },
+    "delta_f1": 0.039215686274509665,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3536,
+    "gt_size": 10,
+    "subgraph_nodes": 71,
+    "subgraph_edges": 284,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2414153439153439,
+      "jaccard": 0.14624443944619384,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.00046896934509277344
+    },
+    "hedonic": {
+      "f1": 0.2656020418503318,
+      "jaccard": 0.1537744511428722,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0006320476531982422
+    },
+    "delta_f1": 0.024186697934987927,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8932,
+    "gt_size": 7,
+    "subgraph_nodes": 22,
+    "subgraph_edges": 71,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4057971014492754,
+      "jaccard": 0.2916666666666667,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00015497207641601562
+    },
+    "hedonic": {
+      "f1": 0.5786366076221149,
+      "jaccard": 0.4083333333333333,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00019097328186035156
+    },
+    "delta_f1": 0.1728395061728395,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10780,
+    "gt_size": 7,
+    "subgraph_nodes": 35,
+    "subgraph_edges": 123,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3226817042606516,
+      "jaccard": 0.20239898989898988,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.0001850128173828125
+    },
+    "hedonic": {
+      "f1": 0.4101315789473684,
+      "jaccard": 0.26642512077294683,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00023055076599121094
+    },
+    "delta_f1": 0.08744987468671678,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1774,
+    "gt_size": 11,
+    "subgraph_nodes": 200,
+    "subgraph_edges": 726,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11367301094654333,
+      "jaccard": 0.0634190997134363,
+      "n_pred": 52,
+      "n_gt": 1,
+      "n_communities": 52,
+      "time_s": 0.0017549991607666016
+    },
+    "hedonic": {
+      "f1": 0.14623133019401352,
+      "jaccard": 0.07959562095818624,
+      "n_pred": 52,
+      "n_gt": 1,
+      "n_communities": 52,
+      "time_s": 0.0030329227447509766
+    },
+    "delta_f1": 0.032558319247470185,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8145,
+    "gt_size": 6,
+    "subgraph_nodes": 251,
+    "subgraph_edges": 767,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15218580370001106,
+      "jaccard": 0.08923339553569305,
+      "n_pred": 59,
+      "n_gt": 1,
+      "n_communities": 59,
+      "time_s": 0.0022039413452148438
+    },
+    "hedonic": {
+      "f1": 0.2060461516036094,
+      "jaccard": 0.1200894457446554,
+      "n_pred": 61,
+      "n_gt": 1,
+      "n_communities": 61,
+      "time_s": 0.004013776779174805
+    },
+    "delta_f1": 0.05386034790359834,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6134,
+    "gt_size": 8,
+    "subgraph_nodes": 78,
+    "subgraph_edges": 240,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17216524216524215,
+      "jaccard": 0.09942945599292348,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0006222724914550781
+    },
+    "hedonic": {
+      "f1": 0.30521416278444885,
+      "jaccard": 0.1865202232789952,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0015451908111572266
+    },
+    "delta_f1": 0.1330489206192067,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9913,
+    "gt_size": 6,
+    "subgraph_nodes": 25,
+    "subgraph_edges": 50,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4959150326797386,
+      "jaccard": 0.421875,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00035762786865234375
+    },
+    "hedonic": {
+      "f1": 0.4844054580896686,
+      "jaccard": 0.33767439668174964,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0003981590270996094
+    },
+    "delta_f1": -0.01150957459006996,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9780,
+    "gt_size": 6,
+    "subgraph_nodes": 45,
+    "subgraph_edges": 82,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.25852007469654525,
+      "jaccard": 0.16292388167388167,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.00023126602172851562
+    },
+    "hedonic": {
+      "f1": 0.4733488733488733,
+      "jaccard": 0.3101161995898838,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.0003762245178222656
+    },
+    "delta_f1": 0.21482879865232807,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6073,
+    "gt_size": 7,
+    "subgraph_nodes": 12,
+    "subgraph_edges": 20,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.6176470588235294,
+      "jaccard": 0.5249999999999999,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00012302398681640625
+    },
+    "hedonic": {
+      "f1": 0.8235294117647058,
+      "jaccard": 0.7,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00012159347534179688
+    },
+    "delta_f1": 0.2058823529411764,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11149,
+    "gt_size": 7,
+    "subgraph_nodes": 51,
+    "subgraph_edges": 241,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.39242286751361166,
+      "jaccard": 0.28185425685425686,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00035119056701660156
+    },
+    "hedonic": {
+      "f1": 0.5504217526864099,
+      "jaccard": 0.4307688838938839,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0005395412445068359
+    },
+    "delta_f1": 0.15799888517279825,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3678,
+    "gt_size": 6,
+    "subgraph_nodes": 24,
+    "subgraph_edges": 51,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3789473684210526,
+      "jaccard": 0.27692307692307694,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.000164031982421875
+    },
+    "hedonic": {
+      "f1": 0.4727521367521367,
+      "jaccard": 0.3096240601503759,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0002655982971191406
+    },
+    "delta_f1": 0.09380476833108409,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1354,
+    "gt_size": 38,
+    "subgraph_nodes": 966,
+    "subgraph_edges": 10772,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11984488793742483,
+      "jaccard": 0.06756045471300891,
+      "n_pred": 156,
+      "n_gt": 1,
+      "n_communities": 156,
+      "time_s": 0.014068126678466797
+    },
+    "hedonic": {
+      "f1": 0.16348929920200156,
+      "jaccard": 0.09165517053791933,
+      "n_pred": 155,
+      "n_gt": 1,
+      "n_communities": 155,
+      "time_s": 0.055210113525390625
+    },
+    "delta_f1": 0.04364441126457673,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 554,
+    "gt_size": 7,
+    "subgraph_nodes": 91,
+    "subgraph_edges": 196,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.20338515877731564,
+      "jaccard": 0.12340804580441662,
+      "n_pred": 27,
+      "n_gt": 1,
+      "n_communities": 27,
+      "time_s": 0.0007855892181396484
+    },
+    "hedonic": {
+      "f1": 0.35116623892868665,
+      "jaccard": 0.21452381089943845,
+      "n_pred": 27,
+      "n_gt": 1,
+      "n_communities": 27,
+      "time_s": 0.0010416507720947266
+    },
+    "delta_f1": 0.147781080151371,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4749,
+    "gt_size": 26,
+    "subgraph_nodes": 146,
+    "subgraph_edges": 490,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2707939842711514,
+      "jaccard": 0.17441466583651946,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0013735294342041016
+    },
+    "hedonic": {
+      "f1": 0.28037227137524623,
+      "jaccard": 0.16990165112414732,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.001730203628540039
+    },
+    "delta_f1": 0.009578287104094807,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1777,
+    "gt_size": 7,
+    "subgraph_nodes": 164,
+    "subgraph_edges": 481,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1378435818771953,
+      "jaccard": 0.07837958260227168,
+      "n_pred": 35,
+      "n_gt": 1,
+      "n_communities": 35,
+      "time_s": 0.0019261837005615234
+    },
+    "hedonic": {
+      "f1": 0.2196515312304786,
+      "jaccard": 0.12463031487010044,
+      "n_pred": 35,
+      "n_gt": 1,
+      "n_communities": 35,
+      "time_s": 0.0028345584869384766
+    },
+    "delta_f1": 0.08180794935328328,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8491,
+    "gt_size": 6,
+    "subgraph_nodes": 23,
+    "subgraph_edges": 79,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.576388888888889,
+      "jaccard": 0.48730158730158735,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0001976490020751953
+    },
+    "hedonic": {
+      "f1": 0.49490740740740735,
+      "jaccard": 0.34444444444444444,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0002701282501220703
+    },
+    "delta_f1": -0.0814814814814816,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8386,
+    "gt_size": 10,
+    "subgraph_nodes": 176,
+    "subgraph_edges": 460,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.10744747648762494,
+      "jaccard": 0.059128947238193674,
+      "n_pred": 39,
+      "n_gt": 1,
+      "n_communities": 39,
+      "time_s": 0.002893686294555664
+    },
+    "hedonic": {
+      "f1": 0.3165097383053688,
+      "jaccard": 0.19269421233736045,
+      "n_pred": 38,
+      "n_gt": 1,
+      "n_communities": 38,
+      "time_s": 0.004134178161621094
+    },
+    "delta_f1": 0.2090622618177439,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3996,
+    "gt_size": 10,
+    "subgraph_nodes": 42,
+    "subgraph_edges": 115,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5476923076923077,
+      "jaccard": 0.49490909090909097,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0002665519714355469
+    },
+    "hedonic": {
+      "f1": 0.5926848253372643,
+      "jaccard": 0.5563760334176293,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00046253204345703125
+    },
+    "delta_f1": 0.0449925176449566,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 13387,
+    "gt_size": 7,
+    "subgraph_nodes": 21,
+    "subgraph_edges": 56,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5899470899470899,
+      "jaccard": 0.5098039215686274,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00021600723266601562
+    },
+    "hedonic": {
+      "f1": 0.6564548494983278,
+      "jaccard": 0.4911690283400809,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0002582073211669922
+    },
+    "delta_f1": 0.06650775955123789,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6219,
+    "gt_size": 6,
+    "subgraph_nodes": 62,
+    "subgraph_edges": 112,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1672032828282828,
+      "jaccard": 0.09705357142857142,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0003688335418701172
+    },
+    "hedonic": {
+      "f1": 0.33901558247083086,
+      "jaccard": 0.20551053800023067,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0004940032958984375
+    },
+    "delta_f1": 0.17181229964254804,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6580,
+    "gt_size": 6,
+    "subgraph_nodes": 13,
+    "subgraph_edges": 31,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5624999999999999,
+      "jaccard": 0.44999999999999996,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00011372566223144531
+    },
+    "hedonic": {
+      "f1": 0.7291666666666665,
+      "jaccard": 0.575,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00011920928955078125
+    },
+    "delta_f1": 0.16666666666666663,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9169,
+    "gt_size": 7,
+    "subgraph_nodes": 22,
+    "subgraph_edges": 29,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.40122549019607845,
+      "jaccard": 0.25790598290598293,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0001430511474609375
+    },
+    "hedonic": {
+      "f1": 0.4270152505446623,
+      "jaccard": 0.274969474969475,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00015592575073242188
+    },
+    "delta_f1": 0.025789760348583823,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5341,
+    "gt_size": 7,
+    "subgraph_nodes": 151,
+    "subgraph_edges": 469,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.13699750774054179,
+      "jaccard": 0.07791310217780806,
+      "n_pred": 37,
+      "n_gt": 1,
+      "n_communities": 37,
+      "time_s": 0.0010042190551757812
+    },
+    "hedonic": {
+      "f1": 0.1634163222133147,
+      "jaccard": 0.08936660652881351,
+      "n_pred": 35,
+      "n_gt": 1,
+      "n_communities": 35,
+      "time_s": 0.0018925666809082031
+    },
+    "delta_f1": 0.026418814472772917,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11924,
+    "gt_size": 13,
+    "subgraph_nodes": 64,
+    "subgraph_edges": 125,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.22514619883040937,
+      "jaccard": 0.13729733483005638,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0007061958312988281
+    },
+    "hedonic": {
+      "f1": 0.28184957041693287,
+      "jaccard": 0.1696980024073498,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0008540153503417969
+    },
+    "delta_f1": 0.0567033715865235,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2539,
+    "gt_size": 8,
+    "subgraph_nodes": 36,
+    "subgraph_edges": 189,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.37430830039525687,
+      "jaccard": 0.26726190476190476,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0001952648162841797
+    },
+    "hedonic": {
+      "f1": 0.5741732327939224,
+      "jaccard": 0.4204433497536946,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0002713203430175781
+    },
+    "delta_f1": 0.19986493239866554,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8549,
+    "gt_size": 13,
+    "subgraph_nodes": 118,
+    "subgraph_edges": 429,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.31798978744816003,
+      "jaccard": 0.21980553496251282,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.00110626220703125
+    },
+    "hedonic": {
+      "f1": 0.47122429163315716,
+      "jaccard": 0.352478928227526,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.0022699832916259766
+    },
+    "delta_f1": 0.15323450418499712,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4710,
+    "gt_size": 16,
+    "subgraph_nodes": 57,
+    "subgraph_edges": 118,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.35370173595754095,
+      "jaccard": 0.24109174739505312,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0004875659942626953
+    },
+    "hedonic": {
+      "f1": 0.5729987587983911,
+      "jaccard": 0.428070421961551,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0006740093231201172
+    },
+    "delta_f1": 0.21929702284085018,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4228,
+    "gt_size": 6,
+    "subgraph_nodes": 42,
+    "subgraph_edges": 153,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.34245277058191703,
+      "jaccard": 0.23700396825396827,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.0003082752227783203
+    },
+    "hedonic": {
+      "f1": 0.38048949064628684,
+      "jaccard": 0.2402692743764172,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00041747093200683594
+    },
+    "delta_f1": 0.03803672006436981,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5710,
+    "gt_size": 13,
+    "subgraph_nodes": 22,
+    "subgraph_edges": 58,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.6190476190476191,
+      "jaccard": 0.5777777777777778,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00028443336486816406
+    },
+    "hedonic": {
+      "f1": 0.8469696969696969,
+      "jaccard": 0.7360294117647058,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00022840499877929688
+    },
+    "delta_f1": 0.22792207792207786,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9935,
+    "gt_size": 8,
+    "subgraph_nodes": 37,
+    "subgraph_edges": 94,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.326530612244898,
+      "jaccard": 0.2285714285714286,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00033974647521972656
+    },
+    "hedonic": {
+      "f1": 0.5387755102040817,
+      "jaccard": 0.37037037037037035,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.0005593299865722656
+    },
+    "delta_f1": 0.21224489795918366,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7201,
+    "gt_size": 6,
+    "subgraph_nodes": 43,
+    "subgraph_edges": 100,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.28409090909090906,
+      "jaccard": 0.18833333333333332,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.00043010711669921875
+    },
+    "hedonic": {
+      "f1": 0.5003937997486385,
+      "jaccard": 0.3374292929292929,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0005500316619873047
+    },
+    "delta_f1": 0.21630289065772945,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4319,
+    "gt_size": 139,
+    "subgraph_nodes": 2389,
+    "subgraph_edges": 8761,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.03414669291277477,
+      "jaccard": 0.01762456556947293,
+      "n_pred": 489,
+      "n_gt": 1,
+      "n_communities": 489,
+      "time_s": 0.06906509399414062
+    },
+    "hedonic": {
+      "f1": 0.11540737233957585,
+      "jaccard": 0.062164686980998606,
+      "n_pred": 509,
+      "n_gt": 1,
+      "n_communities": 509,
+      "time_s": 0.08814597129821777
+    },
+    "delta_f1": 0.08126067942680107,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2732,
+    "gt_size": 19,
+    "subgraph_nodes": 113,
+    "subgraph_edges": 440,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1865354856447115,
+      "jaccard": 0.10966247642075917,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0007677078247070312
+    },
+    "hedonic": {
+      "f1": 0.43709401174726126,
+      "jaccard": 0.33018829992387233,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0009267330169677734
+    },
+    "delta_f1": 0.25055852610254975,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5738,
+    "gt_size": 6,
+    "subgraph_nodes": 11,
+    "subgraph_edges": 26,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00015425682067871094
+    },
+    "hedonic": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00019669532775878906
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1121,
+    "gt_size": 6,
+    "subgraph_nodes": 43,
+    "subgraph_edges": 119,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.24948240165631472,
+      "jaccard": 0.15859449192782527,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0005521774291992188
+    },
+    "hedonic": {
+      "f1": 0.42390378884631763,
+      "jaccard": 0.2693634867547911,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0006334781646728516
+    },
+    "delta_f1": 0.1744213871900029,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7426,
+    "gt_size": 8,
+    "subgraph_nodes": 75,
+    "subgraph_edges": 175,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2982323232323232,
+      "jaccard": 0.20390114379084967,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0004706382751464844
+    },
+    "hedonic": {
+      "f1": 0.41735945583275946,
+      "jaccard": 0.2740806818453877,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0009350776672363281
+    },
+    "delta_f1": 0.11912713260043628,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1187,
+    "gt_size": 6,
+    "subgraph_nodes": 21,
+    "subgraph_edges": 45,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4235294117647058,
+      "jaccard": 0.32727272727272727,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0001709461212158203
+    },
+    "hedonic": {
+      "f1": 0.6534090909090908,
+      "jaccard": 0.49583333333333335,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00019788742065429688
+    },
+    "delta_f1": 0.229879679144385,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2538,
+    "gt_size": 11,
+    "subgraph_nodes": 33,
+    "subgraph_edges": 142,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.39285714285714285,
+      "jaccard": 0.2864583333333333,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.0004134178161621094
+    },
+    "hedonic": {
+      "f1": 0.6109135962077139,
+      "jaccard": 0.441482167902224,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.000347137451171875
+    },
+    "delta_f1": 0.21805645335057106,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7547,
+    "gt_size": 6,
+    "subgraph_nodes": 56,
+    "subgraph_edges": 135,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.21213235294117644,
+      "jaccard": 0.1274404761904762,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0007174015045166016
+    },
+    "hedonic": {
+      "f1": 0.4165193285291324,
+      "jaccard": 0.26789021164021165,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0009455680847167969
+    },
+    "delta_f1": 0.204386975587956,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7169,
+    "gt_size": 6,
+    "subgraph_nodes": 35,
+    "subgraph_edges": 62,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.21924603174603174,
+      "jaccard": 0.13072916666666667,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.00020313262939453125
+    },
+    "hedonic": {
+      "f1": 0.31753663003663,
+      "jaccard": 0.1903820816864295,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0003638267517089844
+    },
+    "delta_f1": 0.09829059829059827,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5685,
+    "gt_size": 10,
+    "subgraph_nodes": 176,
+    "subgraph_edges": 504,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1439816408831689,
+      "jaccard": 0.08270796723609791,
+      "n_pred": 38,
+      "n_gt": 1,
+      "n_communities": 38,
+      "time_s": 0.0016889572143554688
+    },
+    "hedonic": {
+      "f1": 0.24421760871026857,
+      "jaccard": 0.14222544206270277,
+      "n_pred": 39,
+      "n_gt": 1,
+      "n_communities": 39,
+      "time_s": 0.003413677215576172
+    },
+    "delta_f1": 0.10023596782709968,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3534,
+    "gt_size": 6,
+    "subgraph_nodes": 50,
+    "subgraph_edges": 190,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.171248774109186,
+      "jaccard": 0.09787704555506413,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.0005376338958740234
+    },
+    "hedonic": {
+      "f1": 0.33198953823953825,
+      "jaccard": 0.20231269392892687,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0007688999176025391
+    },
+    "delta_f1": 0.16074076413035224,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1232,
+    "gt_size": 31,
+    "subgraph_nodes": 305,
+    "subgraph_edges": 899,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17033974551613282,
+      "jaccard": 0.1005308476566914,
+      "n_pred": 62,
+      "n_gt": 1,
+      "n_communities": 62,
+      "time_s": 0.00574803352355957
+    },
+    "hedonic": {
+      "f1": 0.3191798314450137,
+      "jaccard": 0.21086106378449318,
+      "n_pred": 57,
+      "n_gt": 1,
+      "n_communities": 57,
+      "time_s": 0.006005764007568359
+    },
+    "delta_f1": 0.1488400859288809,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1124,
+    "gt_size": 6,
+    "subgraph_nodes": 43,
+    "subgraph_edges": 99,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.22916666666666663,
+      "jaccard": 0.13984533984533987,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0003440380096435547
+    },
+    "hedonic": {
+      "f1": 0.3655404725992962,
+      "jaccard": 0.2298993277254147,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.00048613548278808594
+    },
+    "delta_f1": 0.13637380593262954,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10972,
+    "gt_size": 6,
+    "subgraph_nodes": 74,
+    "subgraph_edges": 191,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.347027972027972,
+      "jaccard": 0.24853275841418132,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.00036835670471191406
+    },
+    "hedonic": {
+      "f1": 0.3660207926584932,
+      "jaccard": 0.2329313190475214,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.0008442401885986328
+    },
+    "delta_f1": 0.018992820630521212,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11454,
+    "gt_size": 10,
+    "subgraph_nodes": 17,
+    "subgraph_edges": 40,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5797101449275363,
+      "jaccard": 0.5128205128205129,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00020456314086914062
+    },
+    "hedonic": {
+      "f1": 0.7,
+      "jaccard": 0.5555555555555556,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0002396106719970703
+    },
+    "delta_f1": 0.1202898550724637,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7641,
+    "gt_size": 6,
+    "subgraph_nodes": 105,
+    "subgraph_edges": 251,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.14204059829059829,
+      "jaccard": 0.08086260145083674,
+      "n_pred": 26,
+      "n_gt": 1,
+      "n_communities": 26,
+      "time_s": 0.0009984970092773438
+    },
+    "hedonic": {
+      "f1": 0.22660657957316013,
+      "jaccard": 0.1298708382277642,
+      "n_pred": 25,
+      "n_gt": 1,
+      "n_communities": 25,
+      "time_s": 0.0009753704071044922
+    },
+    "delta_f1": 0.08456598128256185,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4391,
+    "gt_size": 6,
+    "subgraph_nodes": 43,
+    "subgraph_edges": 124,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2864583333333333,
+      "jaccard": 0.1902173913043478,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.00027370452880859375
+    },
+    "hedonic": {
+      "f1": 0.432093253968254,
+      "jaccard": 0.28908008774768945,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.00039458274841308594
+    },
+    "delta_f1": 0.14563492063492067,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12937,
+    "gt_size": 6,
+    "subgraph_nodes": 72,
+    "subgraph_edges": 289,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17427384443513474,
+      "jaccard": 0.10185074029611846,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.0009021759033203125
+    },
+    "hedonic": {
+      "f1": 0.38852695953404054,
+      "jaccard": 0.24496598639455786,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.0013251304626464844
+    },
+    "delta_f1": 0.2142531150989058,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9449,
+    "gt_size": 6,
+    "subgraph_nodes": 9,
+    "subgraph_edges": 18,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.0001289844512939453
+    },
+    "hedonic": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 0.00013136863708496094
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6516,
+    "gt_size": 8,
+    "subgraph_nodes": 107,
+    "subgraph_edges": 355,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.32323681640431934,
+      "jaccard": 0.22722533457827576,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.000743865966796875
+    },
+    "hedonic": {
+      "f1": 0.34853297495555935,
+      "jaccard": 0.21334678449321892,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0015377998352050781
+    },
+    "delta_f1": 0.02529615855124001,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3762,
+    "gt_size": 6,
+    "subgraph_nodes": 37,
+    "subgraph_edges": 94,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.26399999999999996,
+      "jaccard": 0.17368421052631577,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0002377033233642578
+    },
+    "hedonic": {
+      "f1": 0.42221198156682016,
+      "jaccard": 0.26768181818181813,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0003771781921386719
+    },
+    "delta_f1": 0.1582119815668202,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9656,
+    "gt_size": 6,
+    "subgraph_nodes": 18,
+    "subgraph_edges": 27,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4448329448329448,
+      "jaccard": 0.2972222222222222,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00014662742614746094
+    },
+    "hedonic": {
+      "f1": 0.5779153766769867,
+      "jaccard": 0.4102564102564103,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00014781951904296875
+    },
+    "delta_f1": 0.1330824318440419,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 93,
+    "gt_size": 9,
+    "subgraph_nodes": 199,
+    "subgraph_edges": 781,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.08074520042605149,
+      "jaccard": 0.04337890427006399,
+      "n_pred": 47,
+      "n_gt": 1,
+      "n_communities": 47,
+      "time_s": 0.0014798641204833984
+    },
+    "hedonic": {
+      "f1": 0.1813395938106775,
+      "jaccard": 0.10188716492460607,
+      "n_pred": 45,
+      "n_gt": 1,
+      "n_communities": 45,
+      "time_s": 0.0032796859741210938
+    },
+    "delta_f1": 0.100594393384626,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5748,
+    "gt_size": 6,
+    "subgraph_nodes": 75,
+    "subgraph_edges": 204,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2816358024691358,
+      "jaccard": 0.18572649572649572,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0004172325134277344
+    },
+    "hedonic": {
+      "f1": 0.2706505399941035,
+      "jaccard": 0.1625233597671678,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0006890296936035156
+    },
+    "delta_f1": -0.010985262475032287,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10277,
+    "gt_size": 7,
+    "subgraph_nodes": 18,
+    "subgraph_edges": 36,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4376780626780627,
+      "jaccard": 0.2941086691086691,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00017595291137695312
+    },
+    "hedonic": {
+      "f1": 0.6549707602339181,
+      "jaccard": 0.4871794871794872,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0001819133758544922
+    },
+    "delta_f1": 0.2172926975558554,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2059,
+    "gt_size": 97,
+    "subgraph_nodes": 1508,
+    "subgraph_edges": 5086,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.039972118691524346,
+      "jaccard": 0.02072255731456443,
+      "n_pred": 307,
+      "n_gt": 1,
+      "n_communities": 307,
+      "time_s": 0.03019118309020996
+    },
+    "hedonic": {
+      "f1": 0.14766058356768294,
+      "jaccard": 0.08170355289283847,
+      "n_pred": 302,
+      "n_gt": 1,
+      "n_communities": 302,
+      "time_s": 0.04253864288330078
+    },
+    "delta_f1": 0.1076884648761586,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11491,
+    "gt_size": 7,
+    "subgraph_nodes": 10,
+    "subgraph_edges": 18,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.8235294117647058,
+      "jaccard": 0.7,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 9.894371032714844e-05
+    },
+    "hedonic": {
+      "f1": 0.8235294117647058,
+      "jaccard": 0.7,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 9.775161743164062e-05
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5322,
+    "gt_size": 6,
+    "subgraph_nodes": 59,
+    "subgraph_edges": 153,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3104668003565062,
+      "jaccard": 0.21145833333333333,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.00031113624572753906
+    },
+    "hedonic": {
+      "f1": 0.32754193201497117,
+      "jaccard": 0.20045642763034066,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0004496574401855469
+    },
+    "delta_f1": 0.01707513165846497,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11186,
+    "gt_size": 10,
+    "subgraph_nodes": 83,
+    "subgraph_edges": 239,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17595198918728333,
+      "jaccard": 0.10173006044523072,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0006470680236816406
+    },
+    "hedonic": {
+      "f1": 0.21808041542886242,
+      "jaccard": 0.1228612045864572,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0008511543273925781
+    },
+    "delta_f1": 0.04212842624157909,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8898,
+    "gt_size": 7,
+    "subgraph_nodes": 44,
+    "subgraph_edges": 147,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2357142857142857,
+      "jaccard": 0.1401669758812616,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00029778480529785156
+    },
+    "hedonic": {
+      "f1": 0.376992376992377,
+      "jaccard": 0.23229166666666667,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.0004153251647949219
+    },
+    "delta_f1": 0.14127809127809127,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12942,
+    "gt_size": 13,
+    "subgraph_nodes": 32,
+    "subgraph_edges": 64,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3801020408163265,
+      "jaccard": 0.2633512267783368,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00029087066650390625
+    },
+    "hedonic": {
+      "f1": 0.6541005291005291,
+      "jaccard": 0.5808127933447627,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.0002155303955078125
+    },
+    "delta_f1": 0.2739984882842026,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5460,
+    "gt_size": 6,
+    "subgraph_nodes": 10,
+    "subgraph_edges": 21,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.7499999999999999,
+      "jaccard": 0.6,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 8.630752563476562e-05
+    },
+    "hedonic": {
+      "f1": 0.7499999999999999,
+      "jaccard": 0.6,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 8.702278137207031e-05
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8949,
+    "gt_size": 6,
+    "subgraph_nodes": 90,
+    "subgraph_edges": 323,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2071094450852236,
+      "jaccard": 0.12668939033103122,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0005545616149902344
+    },
+    "hedonic": {
+      "f1": 0.331147938933425,
+      "jaccard": 0.19982562330178638,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.001132965087890625
+    },
+    "delta_f1": 0.12403849384820137,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6181,
+    "gt_size": 10,
+    "subgraph_nodes": 65,
+    "subgraph_edges": 195,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.19801674029295513,
+      "jaccard": 0.11531540247678018,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0003840923309326172
+    },
+    "hedonic": {
+      "f1": 0.28485802180109576,
+      "jaccard": 0.1676447287581726,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0005733966827392578
+    },
+    "delta_f1": 0.08684128150814063,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7297,
+    "gt_size": 14,
+    "subgraph_nodes": 202,
+    "subgraph_edges": 609,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.21136161847066026,
+      "jaccard": 0.13133866786391016,
+      "n_pred": 54,
+      "n_gt": 1,
+      "n_communities": 54,
+      "time_s": 0.0011374950408935547
+    },
+    "hedonic": {
+      "f1": 0.32218257268678707,
+      "jaccard": 0.20183117743278167,
+      "n_pred": 55,
+      "n_gt": 1,
+      "n_communities": 55,
+      "time_s": 0.0022170543670654297
+    },
+    "delta_f1": 0.11082095421612681,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6894,
+    "gt_size": 6,
+    "subgraph_nodes": 117,
+    "subgraph_edges": 409,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.10641821946169773,
+      "jaccard": 0.058042478354978354,
+      "n_pred": 16,
+      "n_gt": 1,
+      "n_communities": 16,
+      "time_s": 0.0007462501525878906
+    },
+    "hedonic": {
+      "f1": 0.24605761287912603,
+      "jaccard": 0.14042789901583225,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.0014331340789794922
+    },
+    "delta_f1": 0.13963939341742831,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9270,
+    "gt_size": 8,
+    "subgraph_nodes": 228,
+    "subgraph_edges": 744,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1899096801967133,
+      "jaccard": 0.11563846371882086,
+      "n_pred": 56,
+      "n_gt": 1,
+      "n_communities": 56,
+      "time_s": 0.0018849372863769531
+    },
+    "hedonic": {
+      "f1": 0.18356468746021426,
+      "jaccard": 0.10154415973887476,
+      "n_pred": 51,
+      "n_gt": 1,
+      "n_communities": 51,
+      "time_s": 0.0040283203125
+    },
+    "delta_f1": -0.00634499273649905,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11488,
+    "gt_size": 8,
+    "subgraph_nodes": 47,
+    "subgraph_edges": 130,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3684210526315789,
+      "jaccard": 0.26655982905982906,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0003142356872558594
+    },
+    "hedonic": {
+      "f1": 0.562882921058672,
+      "jaccard": 0.39181044398435705,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0003249645233154297
+    },
+    "delta_f1": 0.19446186842709307,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1952,
+    "gt_size": 8,
+    "subgraph_nodes": 101,
+    "subgraph_edges": 316,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15238032143295302,
+      "jaccard": 0.0873968253968254,
+      "n_pred": 25,
+      "n_gt": 1,
+      "n_communities": 25,
+      "time_s": 0.0005831718444824219
+    },
+    "hedonic": {
+      "f1": 0.3159549152951882,
+      "jaccard": 0.19024611547669354,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0008385181427001953
+    },
+    "delta_f1": 0.1635745938622352,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12319,
+    "gt_size": 6,
+    "subgraph_nodes": 50,
+    "subgraph_edges": 227,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1831275720164609,
+      "jaccard": 0.10675945096234951,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0003273487091064453
+    },
+    "hedonic": {
+      "f1": 0.26318840207729094,
+      "jaccard": 0.15218938640453986,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0005655288696289062
+    },
+    "delta_f1": 0.08006083006083003,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4671,
+    "gt_size": 16,
+    "subgraph_nodes": 40,
+    "subgraph_edges": 88,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.35271593124224704,
+      "jaccard": 0.2202408963585434,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0002675056457519531
+    },
+    "hedonic": {
+      "f1": 0.6675925925925925,
+      "jaccard": 0.522,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0008008480072021484
+    },
+    "delta_f1": 0.3148766613503455,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8959,
+    "gt_size": 19,
+    "subgraph_nodes": 130,
+    "subgraph_edges": 619,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2778176761510095,
+      "jaccard": 0.1832541200189147,
+      "n_pred": 18,
+      "n_gt": 1,
+      "n_communities": 18,
+      "time_s": 0.0005681514739990234
+    },
+    "hedonic": {
+      "f1": 0.40545307404320224,
+      "jaccard": 0.2612167949820251,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.0011887550354003906
+    },
+    "delta_f1": 0.12763539789219275,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5836,
+    "gt_size": 8,
+    "subgraph_nodes": 100,
+    "subgraph_edges": 517,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17111578542705555,
+      "jaccard": 0.10058691308691309,
+      "n_pred": 26,
+      "n_gt": 1,
+      "n_communities": 26,
+      "time_s": 0.0005908012390136719
+    },
+    "hedonic": {
+      "f1": 0.30436066126855604,
+      "jaccard": 0.18578388459635367,
+      "n_pred": 26,
+      "n_gt": 1,
+      "n_communities": 26,
+      "time_s": 0.0012798309326171875
+    },
+    "delta_f1": 0.1332448758415005,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8679,
+    "gt_size": 7,
+    "subgraph_nodes": 29,
+    "subgraph_edges": 48,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3322994652406417,
+      "jaccard": 0.21197649572649574,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.0001595020294189453
+    },
+    "hedonic": {
+      "f1": 0.6658410732714138,
+      "jaccard": 0.5271707459207459,
+      "n_pred": 5,
+      "n_gt": 1,
+      "n_communities": 5,
+      "time_s": 0.00017213821411132812
+    },
+    "delta_f1": 0.33354160803077215,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3510,
+    "gt_size": 14,
+    "subgraph_nodes": 123,
+    "subgraph_edges": 338,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.22329306400513832,
+      "jaccard": 0.1382809388324094,
+      "n_pred": 26,
+      "n_gt": 1,
+      "n_communities": 26,
+      "time_s": 0.0012693405151367188
+    },
+    "hedonic": {
+      "f1": 0.4171490735583996,
+      "jaccard": 0.29584606953947734,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0013737678527832031
+    },
+    "delta_f1": 0.19385600955326127,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2875,
+    "gt_size": 100,
+    "subgraph_nodes": 1413,
+    "subgraph_edges": 6269,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.06302602947488699,
+      "jaccard": 0.033452825814450714,
+      "n_pred": 277,
+      "n_gt": 1,
+      "n_communities": 277,
+      "time_s": 0.02119278907775879
+    },
+    "hedonic": {
+      "f1": 0.14516127730887107,
+      "jaccard": 0.08038755258657615,
+      "n_pred": 277,
+      "n_gt": 1,
+      "n_communities": 277,
+      "time_s": 0.03265047073364258
+    },
+    "delta_f1": 0.08213524783398408,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12571,
+    "gt_size": 8,
+    "subgraph_nodes": 21,
+    "subgraph_edges": 53,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.6397660818713451,
+      "jaccard": 0.5925925925925926,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00013399124145507812
+    },
+    "hedonic": {
+      "f1": 0.4594340256772198,
+      "jaccard": 0.3108465608465608,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00013589859008789062
+    },
+    "delta_f1": -0.1803320561941253,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5785,
+    "gt_size": 6,
+    "subgraph_nodes": 22,
+    "subgraph_edges": 36,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4084967320261438,
+      "jaccard": 0.30277777777777776,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00014543533325195312
+    },
+    "hedonic": {
+      "f1": 0.4263415892672858,
+      "jaccard": 0.2748015873015873,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0001914501190185547
+    },
+    "delta_f1": 0.017844857241142043,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9112,
+    "gt_size": 7,
+    "subgraph_nodes": 143,
+    "subgraph_edges": 494,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17618722170446305,
+      "jaccard": 0.10543758043758045,
+      "n_pred": 37,
+      "n_gt": 1,
+      "n_communities": 37,
+      "time_s": 0.0007779598236083984
+    },
+    "hedonic": {
+      "f1": 0.19520643474095162,
+      "jaccard": 0.11213218575353295,
+      "n_pred": 36,
+      "n_gt": 1,
+      "n_communities": 36,
+      "time_s": 0.0013573169708251953
+    },
+    "delta_f1": 0.01901921303648857,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 289,
+    "gt_size": 11,
+    "subgraph_nodes": 140,
+    "subgraph_edges": 442,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.23466199504158347,
+      "jaccard": 0.1479727950171718,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.0012543201446533203
+    },
+    "hedonic": {
+      "f1": 0.26214365402697853,
+      "jaccard": 0.15385430120091562,
+      "n_pred": 28,
+      "n_gt": 1,
+      "n_communities": 28,
+      "time_s": 0.0013706684112548828
+    },
+    "delta_f1": 0.027481658985395063,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10685,
+    "gt_size": 7,
+    "subgraph_nodes": 19,
+    "subgraph_edges": 30,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5555555555555556,
+      "jaccard": 0.40625,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00011873245239257812
+    },
+    "hedonic": {
+      "f1": 0.5555555555555555,
+      "jaccard": 0.40625,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00011944770812988281
+    },
+    "delta_f1": -1.1102230246251565e-16,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4143,
+    "gt_size": 146,
+    "subgraph_nodes": 961,
+    "subgraph_edges": 2790,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.04911991135693041,
+      "jaccard": 0.02564167317831671,
+      "n_pred": 208,
+      "n_gt": 1,
+      "n_communities": 208,
+      "time_s": 0.009697675704956055
+    },
+    "hedonic": {
+      "f1": 0.10892310100088946,
+      "jaccard": 0.05883129891963933,
+      "n_pred": 205,
+      "n_gt": 1,
+      "n_communities": 205,
+      "time_s": 0.04049205780029297
+    },
+    "delta_f1": 0.05980318964395905,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10104,
+    "gt_size": 8,
+    "subgraph_nodes": 12,
+    "subgraph_edges": 42,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 9.322166442871094e-05
+    },
+    "hedonic": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 8.821487426757812e-05
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12339,
+    "gt_size": 7,
+    "subgraph_nodes": 74,
+    "subgraph_edges": 173,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2501131221719457,
+      "jaccard": 0.1594611528822055,
+      "n_pred": 17,
+      "n_gt": 1,
+      "n_communities": 17,
+      "time_s": 0.0005702972412109375
+    },
+    "hedonic": {
+      "f1": 0.30270551108374383,
+      "jaccard": 0.18201227013727012,
+      "n_pred": 16,
+      "n_gt": 1,
+      "n_communities": 16,
+      "time_s": 0.0005352497100830078
+    },
+    "delta_f1": 0.05259238891179813,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10468,
+    "gt_size": 11,
+    "subgraph_nodes": 81,
+    "subgraph_edges": 445,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4742757242757243,
+      "jaccard": 0.4125925925925926,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.0003085136413574219
+    },
+    "hedonic": {
+      "f1": 0.6967075591646775,
+      "jaccard": 0.6542206509101174,
+      "n_pred": 11,
+      "n_gt": 1,
+      "n_communities": 11,
+      "time_s": 0.0005028247833251953
+    },
+    "delta_f1": 0.22243183488895324,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2037,
+    "gt_size": 41,
+    "subgraph_nodes": 572,
+    "subgraph_edges": 1866,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11246223208492508,
+      "jaccard": 0.06270480801870562,
+      "n_pred": 131,
+      "n_gt": 1,
+      "n_communities": 131,
+      "time_s": 0.0062236785888671875
+    },
+    "hedonic": {
+      "f1": 0.27915824639715936,
+      "jaccard": 0.16532791158401067,
+      "n_pred": 144,
+      "n_gt": 1,
+      "n_communities": 144,
+      "time_s": 0.013624191284179688
+    },
+    "delta_f1": 0.1666960143122343,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10406,
+    "gt_size": 7,
+    "subgraph_nodes": 13,
+    "subgraph_edges": 34,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5833333333333334,
+      "jaccard": 0.4772727272727273,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00010085105895996094
+    },
+    "hedonic": {
+      "f1": 0.7583333333333333,
+      "jaccard": 0.6118881118881119,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.0001087188720703125
+    },
+    "delta_f1": 0.17499999999999993,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7407,
+    "gt_size": 16,
+    "subgraph_nodes": 209,
+    "subgraph_edges": 610,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.126719118962621,
+      "jaccard": 0.07080141026856879,
+      "n_pred": 41,
+      "n_gt": 1,
+      "n_communities": 41,
+      "time_s": 0.002170562744140625
+    },
+    "hedonic": {
+      "f1": 0.26750564105755165,
+      "jaccard": 0.15578368204962803,
+      "n_pred": 39,
+      "n_gt": 1,
+      "n_communities": 39,
+      "time_s": 0.0028276443481445312
+    },
+    "delta_f1": 0.14078652209493064,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9132,
+    "gt_size": 8,
+    "subgraph_nodes": 89,
+    "subgraph_edges": 259,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11354997024333409,
+      "jaccard": 0.06160367410367411,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.0008215904235839844
+    },
+    "hedonic": {
+      "f1": 0.32086825385371354,
+      "jaccard": 0.19256596766084433,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.0007479190826416016
+    },
+    "delta_f1": 0.20731828361037946,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6531,
+    "gt_size": 7,
+    "subgraph_nodes": 87,
+    "subgraph_edges": 203,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.252962445308702,
+      "jaccard": 0.16462703962703965,
+      "n_pred": 22,
+      "n_gt": 1,
+      "n_communities": 22,
+      "time_s": 0.0006697177886962891
+    },
+    "hedonic": {
+      "f1": 0.352268797240641,
+      "jaccard": 0.21402942273559383,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0006396770477294922
+    },
+    "delta_f1": 0.09930635193193899,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3041,
+    "gt_size": 7,
+    "subgraph_nodes": 31,
+    "subgraph_edges": 87,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.40674603174603174,
+      "jaccard": 0.30166666666666664,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0001838207244873047
+    },
+    "hedonic": {
+      "f1": 0.36190476190476195,
+      "jaccard": 0.22748447204968947,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.0002777576446533203
+    },
+    "delta_f1": -0.04484126984126979,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9035,
+    "gt_size": 7,
+    "subgraph_nodes": 50,
+    "subgraph_edges": 197,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2655172413793104,
+      "jaccard": 0.175,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0003070831298828125
+    },
+    "hedonic": {
+      "f1": 0.4113910773168252,
+      "jaccard": 0.26399001606912353,
+      "n_pred": 7,
+      "n_gt": 1,
+      "n_communities": 7,
+      "time_s": 0.00040340423583984375
+    },
+    "delta_f1": 0.14587383593751485,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10970,
+    "gt_size": 6,
+    "subgraph_nodes": 21,
+    "subgraph_edges": 51,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.33333333333333337,
+      "jaccard": 0.23333333333333334,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0001735687255859375
+    },
+    "hedonic": {
+      "f1": 0.5548654244306419,
+      "jaccard": 0.3843137254901961,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00017762184143066406
+    },
+    "delta_f1": 0.22153209109730854,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12976,
+    "gt_size": 10,
+    "subgraph_nodes": 20,
+    "subgraph_edges": 58,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5434782608695653,
+      "jaccard": 0.4807692307692308,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00013709068298339844
+    },
+    "hedonic": {
+      "f1": 0.7215836526181354,
+      "jaccard": 0.565015479876161,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.0001690387725830078
+    },
+    "delta_f1": 0.1781053917485701,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5193,
+    "gt_size": 11,
+    "subgraph_nodes": 39,
+    "subgraph_edges": 61,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3158939014202172,
+      "jaccard": 0.19457163207163206,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0001976490020751953
+    },
+    "hedonic": {
+      "f1": 0.4805472305472305,
+      "jaccard": 0.3269298375916023,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00020241737365722656
+    },
+    "delta_f1": 0.16465332912701325,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1083,
+    "gt_size": 8,
+    "subgraph_nodes": 56,
+    "subgraph_edges": 193,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.19287119313435105,
+      "jaccard": 0.11143059855521155,
+      "n_pred": 10,
+      "n_gt": 1,
+      "n_communities": 10,
+      "time_s": 0.0004165172576904297
+    },
+    "hedonic": {
+      "f1": 0.3488095238095238,
+      "jaccard": 0.21125541125541122,
+      "n_pred": 14,
+      "n_gt": 1,
+      "n_communities": 14,
+      "time_s": 0.000560760498046875
+    },
+    "delta_f1": 0.15593833067517274,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1456,
+    "gt_size": 8,
+    "subgraph_nodes": 125,
+    "subgraph_edges": 380,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.20420596346537684,
+      "jaccard": 0.1236257837527891,
+      "n_pred": 22,
+      "n_gt": 1,
+      "n_communities": 22,
+      "time_s": 0.0006759166717529297
+    },
+    "hedonic": {
+      "f1": 0.24884482046598372,
+      "jaccard": 0.14393115108695226,
+      "n_pred": 24,
+      "n_gt": 1,
+      "n_communities": 24,
+      "time_s": 0.0018596649169921875
+    },
+    "delta_f1": 0.04463885700060688,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12912,
+    "gt_size": 7,
+    "subgraph_nodes": 21,
+    "subgraph_edges": 48,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.45394736842105265,
+      "jaccard": 0.296875,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.0001380443572998047
+    },
+    "hedonic": {
+      "f1": 0.6775150436477668,
+      "jaccard": 0.5177083333333334,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00022530555725097656
+    },
+    "delta_f1": 0.22356767522671417,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 473,
+    "gt_size": 9,
+    "subgraph_nodes": 163,
+    "subgraph_edges": 646,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.20979532163742692,
+      "jaccard": 0.13071481785562244,
+      "n_pred": 36,
+      "n_gt": 1,
+      "n_communities": 36,
+      "time_s": 0.0007297992706298828
+    },
+    "hedonic": {
+      "f1": 0.3452081996304445,
+      "jaccard": 0.22107816437390884,
+      "n_pred": 37,
+      "n_gt": 1,
+      "n_communities": 37,
+      "time_s": 0.0022504329681396484
+    },
+    "delta_f1": 0.1354128779930176,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10123,
+    "gt_size": 7,
+    "subgraph_nodes": 197,
+    "subgraph_edges": 526,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11925293746988398,
+      "jaccard": 0.06696289265654254,
+      "n_pred": 46,
+      "n_gt": 1,
+      "n_communities": 46,
+      "time_s": 0.001207113265991211
+    },
+    "hedonic": {
+      "f1": 0.16826355354235778,
+      "jaccard": 0.09446875007005576,
+      "n_pred": 45,
+      "n_gt": 1,
+      "n_communities": 45,
+      "time_s": 0.0020895004272460938
+    },
+    "delta_f1": 0.0490106160724738,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1509,
+    "gt_size": 14,
+    "subgraph_nodes": 159,
+    "subgraph_edges": 397,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.24838371730090344,
+      "jaccard": 0.159079928177641,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.0008792877197265625
+    },
+    "hedonic": {
+      "f1": 0.247253272364014,
+      "jaccard": 0.14824043879605106,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.001180887222290039
+    },
+    "delta_f1": -0.0011304449368894354,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10791,
+    "gt_size": 9,
+    "subgraph_nodes": 46,
+    "subgraph_edges": 147,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.33062500000000006,
+      "jaccard": 0.22767857142857142,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0002224445343017578
+    },
+    "hedonic": {
+      "f1": 0.45060136547205515,
+      "jaccard": 0.29469847229429613,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.00035071372985839844
+    },
+    "delta_f1": 0.11997636547205509,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 13460,
+    "gt_size": 6,
+    "subgraph_nodes": 11,
+    "subgraph_edges": 25,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 8.320808410644531e-05
+    },
+    "hedonic": {
+      "f1": 0.7058823529411764,
+      "jaccard": 0.5454545454545454,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 8.511543273925781e-05
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11280,
+    "gt_size": 7,
+    "subgraph_nodes": 23,
+    "subgraph_edges": 59,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4605263157894737,
+      "jaccard": 0.36458333333333337,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.000125885009765625
+    },
+    "hedonic": {
+      "f1": 0.7738566000562904,
+      "jaccard": 0.6360576923076923,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00014281272888183594
+    },
+    "delta_f1": 0.31333028426681675,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6635,
+    "gt_size": 6,
+    "subgraph_nodes": 77,
+    "subgraph_edges": 278,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.16929889755976713,
+      "jaccard": 0.09889024019458802,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.00034165382385253906
+    },
+    "hedonic": {
+      "f1": 0.31099363836005356,
+      "jaccard": 0.18504014628667964,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.0008234977722167969
+    },
+    "delta_f1": 0.14169474080028643,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10394,
+    "gt_size": 8,
+    "subgraph_nodes": 24,
+    "subgraph_edges": 80,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.41379310344827586,
+      "jaccard": 0.2857142857142857,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.0001556873321533203
+    },
+    "hedonic": {
+      "f1": 0.5517241379310345,
+      "jaccard": 0.38095238095238093,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.0001595020294189453
+    },
+    "delta_f1": 0.13793103448275862,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6555,
+    "gt_size": 9,
+    "subgraph_nodes": 17,
+    "subgraph_edges": 53,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.6315789473684211,
+      "jaccard": 0.6,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00010442733764648438
+    },
+    "hedonic": {
+      "f1": 0.871578947368421,
+      "jaccard": 0.7875,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00012063980102539062
+    },
+    "delta_f1": 0.23999999999999988,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10640,
+    "gt_size": 7,
+    "subgraph_nodes": 50,
+    "subgraph_edges": 114,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.23055555555555557,
+      "jaccard": 0.14302248677248677,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0002415180206298828
+    },
+    "hedonic": {
+      "f1": 0.5104938271604937,
+      "jaccard": 0.34290458937198065,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0004494190216064453
+    },
+    "delta_f1": 0.27993827160493817,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6180,
+    "gt_size": 14,
+    "subgraph_nodes": 76,
+    "subgraph_edges": 331,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.27378787878787875,
+      "jaccard": 0.1715501945970696,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0002899169921875
+    },
+    "hedonic": {
+      "f1": 0.42261134601805406,
+      "jaccard": 0.2825408421707721,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.0004241466522216797
+    },
+    "delta_f1": 0.1488234672301753,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3122,
+    "gt_size": 141,
+    "subgraph_nodes": 2216,
+    "subgraph_edges": 8787,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.06237298260943135,
+      "jaccard": 0.03314510683452409,
+      "n_pred": 472,
+      "n_gt": 1,
+      "n_communities": 472,
+      "time_s": 0.05188584327697754
+    },
+    "hedonic": {
+      "f1": 0.12711303727538706,
+      "jaccard": 0.06903829478992503,
+      "n_pred": 476,
+      "n_gt": 1,
+      "n_communities": 476,
+      "time_s": 0.06306314468383789
+    },
+    "delta_f1": 0.0647400546659557,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12143,
+    "gt_size": 6,
+    "subgraph_nodes": 18,
+    "subgraph_edges": 42,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.6245791245791246,
+      "jaccard": 0.565359477124183,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00014090538024902344
+    },
+    "hedonic": {
+      "f1": 0.6445012787723785,
+      "jaccard": 0.4812834224598931,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0001266002655029297
+    },
+    "delta_f1": 0.019922154193253938,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1007,
+    "gt_size": 9,
+    "subgraph_nodes": 282,
+    "subgraph_edges": 1454,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1281060033662588,
+      "jaccard": 0.07263926999164483,
+      "n_pred": 48,
+      "n_gt": 1,
+      "n_communities": 48,
+      "time_s": 0.0017349720001220703
+    },
+    "hedonic": {
+      "f1": 0.2263069365358275,
+      "jaccard": 0.1328907846526841,
+      "n_pred": 47,
+      "n_gt": 1,
+      "n_communities": 47,
+      "time_s": 0.003545522689819336
+    },
+    "delta_f1": 0.09820093316956871,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5673,
+    "gt_size": 6,
+    "subgraph_nodes": 80,
+    "subgraph_edges": 198,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.23140589569160996,
+      "jaccard": 0.14661654135338345,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.0007009506225585938
+    },
+    "hedonic": {
+      "f1": 0.32475226312157635,
+      "jaccard": 0.20837400798866965,
+      "n_pred": 21,
+      "n_gt": 1,
+      "n_communities": 21,
+      "time_s": 0.0006604194641113281
+    },
+    "delta_f1": 0.09334636742996638,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 13327,
+    "gt_size": 28,
+    "subgraph_nodes": 163,
+    "subgraph_edges": 585,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.23627115725573072,
+      "jaccard": 0.14798589068111098,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.0006270408630371094
+    },
+    "hedonic": {
+      "f1": 0.35024456025802286,
+      "jaccard": 0.22640989890903726,
+      "n_pred": 29,
+      "n_gt": 1,
+      "n_communities": 29,
+      "time_s": 0.0010480880737304688
+    },
+    "delta_f1": 0.11397340300229214,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7467,
+    "gt_size": 6,
+    "subgraph_nodes": 72,
+    "subgraph_edges": 235,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17620967741935484,
+      "jaccard": 0.1047863247863248,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0004596710205078125
+    },
+    "hedonic": {
+      "f1": 0.3166366809458914,
+      "jaccard": 0.18819683731879905,
+      "n_pred": 16,
+      "n_gt": 1,
+      "n_communities": 16,
+      "time_s": 0.0007915496826171875
+    },
+    "delta_f1": 0.1404270035265366,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5843,
+    "gt_size": 13,
+    "subgraph_nodes": 293,
+    "subgraph_edges": 928,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.18573444586275537,
+      "jaccard": 0.11229229506226872,
+      "n_pred": 67,
+      "n_gt": 1,
+      "n_communities": 67,
+      "time_s": 0.0021538734436035156
+    },
+    "hedonic": {
+      "f1": 0.43614882052188036,
+      "jaccard": 0.3251807168769453,
+      "n_pred": 70,
+      "n_gt": 1,
+      "n_communities": 70,
+      "time_s": 0.003204822540283203
+    },
+    "delta_f1": 0.25041437465912497,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12032,
+    "gt_size": 6,
+    "subgraph_nodes": 207,
+    "subgraph_edges": 555,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15054375493761576,
+      "jaccard": 0.08763809974747475,
+      "n_pred": 64,
+      "n_gt": 1,
+      "n_communities": 64,
+      "time_s": 0.0017528533935546875
+    },
+    "hedonic": {
+      "f1": 0.12682783494561511,
+      "jaccard": 0.0679125371488949,
+      "n_pred": 63,
+      "n_gt": 1,
+      "n_communities": 63,
+      "time_s": 0.0024077892303466797
+    },
+    "delta_f1": -0.02371591999200065,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11164,
+    "gt_size": 6,
+    "subgraph_nodes": 29,
+    "subgraph_edges": 77,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.46374458874458874,
+      "jaccard": 0.3392857142857143,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.000156402587890625
+    },
+    "hedonic": {
+      "f1": 0.34403559403559403,
+      "jaccard": 0.21587832457397674,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00019216537475585938
+    },
+    "delta_f1": -0.11970899470899471,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 13194,
+    "gt_size": 8,
+    "subgraph_nodes": 25,
+    "subgraph_edges": 52,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5137731205842662,
+      "jaccard": 0.38678451178451173,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00017547607421875
+    },
+    "hedonic": {
+      "f1": 0.6826506826506826,
+      "jaccard": 0.5216931216931217,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0001990795135498047
+    },
+    "delta_f1": 0.16887756206641646,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 6080,
+    "gt_size": 11,
+    "subgraph_nodes": 19,
+    "subgraph_edges": 28,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5973856209150327,
+      "jaccard": 0.4805021367521367,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00012087821960449219
+    },
+    "hedonic": {
+      "f1": 0.6796536796536796,
+      "jaccard": 0.5648148148148148,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00012993812561035156
+    },
+    "delta_f1": 0.08226805873864695,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10271,
+    "gt_size": 10,
+    "subgraph_nodes": 35,
+    "subgraph_edges": 103,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2852822580645161,
+      "jaccard": 0.1822443181818182,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.00026035308837890625
+    },
+    "hedonic": {
+      "f1": 0.43123399897593445,
+      "jaccard": 0.27538314176245215,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0003154277801513672
+    },
+    "delta_f1": 0.14595174091141833,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 806,
+    "gt_size": 8,
+    "subgraph_nodes": 113,
+    "subgraph_edges": 442,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4535098522167487,
+      "jaccard": 0.39556878306878307,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.00048422813415527344
+    },
+    "hedonic": {
+      "f1": 0.33456292195402904,
+      "jaccard": 0.2163315556691246,
+      "n_pred": 20,
+      "n_gt": 1,
+      "n_communities": 20,
+      "time_s": 0.0008602142333984375
+    },
+    "delta_f1": -0.11894693026271969,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 7505,
+    "gt_size": 7,
+    "subgraph_nodes": 105,
+    "subgraph_edges": 357,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17981837003576134,
+      "jaccard": 0.10755170755170755,
+      "n_pred": 22,
+      "n_gt": 1,
+      "n_communities": 22,
+      "time_s": 0.0008203983306884766
+    },
+    "hedonic": {
+      "f1": 0.28432274469913543,
+      "jaccard": 0.1700520937687838,
+      "n_pred": 23,
+      "n_gt": 1,
+      "n_communities": 23,
+      "time_s": 0.0010809898376464844
+    },
+    "delta_f1": 0.10450437466337409,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1945,
+    "gt_size": 6,
+    "subgraph_nodes": 169,
+    "subgraph_edges": 555,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.13332624716553287,
+      "jaccard": 0.0759844162493932,
+      "n_pred": 42,
+      "n_gt": 1,
+      "n_communities": 42,
+      "time_s": 0.0007574558258056641
+    },
+    "hedonic": {
+      "f1": 0.2253751632699182,
+      "jaccard": 0.13343874723159074,
+      "n_pred": 42,
+      "n_gt": 1,
+      "n_communities": 42,
+      "time_s": 0.0016732215881347656
+    },
+    "delta_f1": 0.09204891610438531,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2303,
+    "gt_size": 8,
+    "subgraph_nodes": 35,
+    "subgraph_edges": 105,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2952758070725403,
+      "jaccard": 0.17516339869281047,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.0002472400665283203
+    },
+    "hedonic": {
+      "f1": 0.3623310810810811,
+      "jaccard": 0.22146401985111663,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00035119056701660156
+    },
+    "delta_f1": 0.06705527400854078,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5305,
+    "gt_size": 10,
+    "subgraph_nodes": 63,
+    "subgraph_edges": 131,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.36642857142857144,
+      "jaccard": 0.2724344305580004,
+      "n_pred": 15,
+      "n_gt": 1,
+      "n_communities": 15,
+      "time_s": 0.0003952980041503906
+    },
+    "hedonic": {
+      "f1": 0.5293040293040293,
+      "jaccard": 0.39115805227845357,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.0005061626434326172
+    },
+    "delta_f1": 0.16287545787545787,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 5689,
+    "gt_size": 6,
+    "subgraph_nodes": 184,
+    "subgraph_edges": 605,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.1498914639000846,
+      "jaccard": 0.08726053639846743,
+      "n_pred": 45,
+      "n_gt": 1,
+      "n_communities": 45,
+      "time_s": 0.001607656478881836
+    },
+    "hedonic": {
+      "f1": 0.20615787662473234,
+      "jaccard": 0.11577047775907773,
+      "n_pred": 38,
+      "n_gt": 1,
+      "n_communities": 38,
+      "time_s": 0.0025954246520996094
+    },
+    "delta_f1": 0.056266412724647746,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1615,
+    "gt_size": 8,
+    "subgraph_nodes": 50,
+    "subgraph_edges": 155,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.43333333333333335,
+      "jaccard": 0.3611111111111111,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.0002541542053222656
+    },
+    "hedonic": {
+      "f1": 0.5513537520271267,
+      "jaccard": 0.4356303418803419,
+      "n_pred": 12,
+      "n_gt": 1,
+      "n_communities": 12,
+      "time_s": 0.00036263465881347656
+    },
+    "delta_f1": 0.11802041869379332,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9540,
+    "gt_size": 6,
+    "subgraph_nodes": 9,
+    "subgraph_edges": 19,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 9.512901306152344e-05
+    },
+    "hedonic": {
+      "f1": 0.8,
+      "jaccard": 0.6666666666666666,
+      "n_pred": 1,
+      "n_gt": 1,
+      "n_communities": 1,
+      "time_s": 7.796287536621094e-05
+    },
+    "delta_f1": 0.0,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8473,
+    "gt_size": 9,
+    "subgraph_nodes": 37,
+    "subgraph_edges": 181,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.30405405405405406,
+      "jaccard": 0.20089285714285715,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00017380714416503906
+    },
+    "hedonic": {
+      "f1": 0.46476833976833976,
+      "jaccard": 0.3031655844155844,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00024390220642089844
+    },
+    "delta_f1": 0.1607142857142857,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4441,
+    "gt_size": 6,
+    "subgraph_nodes": 48,
+    "subgraph_edges": 101,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.2623520270579094,
+      "jaccard": 0.1672008547008547,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.0003943443298339844
+    },
+    "hedonic": {
+      "f1": 0.30040917833559977,
+      "jaccard": 0.17833568033796865,
+      "n_pred": 13,
+      "n_gt": 1,
+      "n_communities": 13,
+      "time_s": 0.0003979206085205078
+    },
+    "delta_f1": 0.03805715127769038,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8391,
+    "gt_size": 12,
+    "subgraph_nodes": 179,
+    "subgraph_edges": 442,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.22076280991265465,
+      "jaccard": 0.13916369633053047,
+      "n_pred": 56,
+      "n_gt": 1,
+      "n_communities": 56,
+      "time_s": 0.0013995170593261719
+    },
+    "hedonic": {
+      "f1": 0.2419022977148771,
+      "jaccard": 0.1447768767322931,
+      "n_pred": 56,
+      "n_gt": 1,
+      "n_communities": 56,
+      "time_s": 0.002710103988647461
+    },
+    "delta_f1": 0.02113948780222244,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 9219,
+    "gt_size": 13,
+    "subgraph_nodes": 49,
+    "subgraph_edges": 98,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.25157606769448876,
+      "jaccard": 0.14876895469726353,
+      "n_pred": 8,
+      "n_gt": 1,
+      "n_communities": 8,
+      "time_s": 0.00034236907958984375
+    },
+    "hedonic": {
+      "f1": 0.5143902717242391,
+      "jaccard": 0.36667216474234016,
+      "n_pred": 9,
+      "n_gt": 1,
+      "n_communities": 9,
+      "time_s": 0.0003333091735839844
+    },
+    "delta_f1": 0.26281420402975036,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 3897,
+    "gt_size": 7,
+    "subgraph_nodes": 90,
+    "subgraph_edges": 238,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.23722473604826544,
+      "jaccard": 0.15179789915966385,
+      "n_pred": 25,
+      "n_gt": 1,
+      "n_communities": 25,
+      "time_s": 0.0005328655242919922
+    },
+    "hedonic": {
+      "f1": 0.37187701061385264,
+      "jaccard": 0.22846224340175952,
+      "n_pred": 25,
+      "n_gt": 1,
+      "n_communities": 25,
+      "time_s": 0.0010292530059814453
+    },
+    "delta_f1": 0.1346522745655872,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10385,
+    "gt_size": 10,
+    "subgraph_nodes": 28,
+    "subgraph_edges": 106,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.44459706959706957,
+      "jaccard": 0.31160714285714286,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.00015115737915039062
+    },
+    "hedonic": {
+      "f1": 0.6647619047619047,
+      "jaccard": 0.5493386243386243,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00016498565673828125
+    },
+    "delta_f1": 0.2201648351648351,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4695,
+    "gt_size": 7,
+    "subgraph_nodes": 13,
+    "subgraph_edges": 34,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.5833333333333334,
+      "jaccard": 0.4772727272727273,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 9.322166442871094e-05
+    },
+    "hedonic": {
+      "f1": 0.7583333333333333,
+      "jaccard": 0.6118881118881119,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 9.655952453613281e-05
+    },
+    "delta_f1": 0.17499999999999993,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 10136,
+    "gt_size": 6,
+    "subgraph_nodes": 179,
+    "subgraph_edges": 521,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.15123903519044182,
+      "jaccard": 0.0880188923395445,
+      "n_pred": 46,
+      "n_gt": 1,
+      "n_communities": 46,
+      "time_s": 0.0013816356658935547
+    },
+    "hedonic": {
+      "f1": 0.1630317165674927,
+      "jaccard": 0.09055681527037508,
+      "n_pred": 47,
+      "n_gt": 1,
+      "n_communities": 47,
+      "time_s": 0.0018911361694335938
+    },
+    "delta_f1": 0.01179268137705089,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 4958,
+    "gt_size": 6,
+    "subgraph_nodes": 28,
+    "subgraph_edges": 57,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.3380681818181818,
+      "jaccard": 0.222008547008547,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00015807151794433594
+    },
+    "hedonic": {
+      "f1": 0.27176127214170687,
+      "jaccard": 0.1633852258852259,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00019741058349609375
+    },
+    "delta_f1": -0.06630690967647496,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 11059,
+    "gt_size": 6,
+    "subgraph_nodes": 14,
+    "subgraph_edges": 21,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.475,
+      "jaccard": 0.3125,
+      "n_pred": 2,
+      "n_gt": 1,
+      "n_communities": 2,
+      "time_s": 0.00011467933654785156
+    },
+    "hedonic": {
+      "f1": 0.5888157894736842,
+      "jaccard": 0.4230769230769231,
+      "n_pred": 3,
+      "n_gt": 1,
+      "n_communities": 3,
+      "time_s": 0.00012063980102539062
+    },
+    "delta_f1": 0.1138157894736842,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 2461,
+    "gt_size": 6,
+    "subgraph_nodes": 68,
+    "subgraph_edges": 147,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.11561008436008435,
+      "jaccard": 0.06338383838383839,
+      "n_pred": 18,
+      "n_gt": 1,
+      "n_communities": 18,
+      "time_s": 0.0004229545593261719
+    },
+    "hedonic": {
+      "f1": 0.31079634563829966,
+      "jaccard": 0.18596606744704572,
+      "n_pred": 18,
+      "n_gt": 1,
+      "n_communities": 18,
+      "time_s": 0.0005240440368652344
+    },
+    "delta_f1": 0.1951862612782153,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 13365,
+    "gt_size": 9,
+    "subgraph_nodes": 27,
+    "subgraph_edges": 93,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.4537330316742081,
+      "jaccard": 0.31845238095238093,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.0001442432403564453
+    },
+    "hedonic": {
+      "f1": 0.4029761904761905,
+      "jaccard": 0.26075977162933683,
+      "n_pred": 4,
+      "n_gt": 1,
+      "n_communities": 4,
+      "time_s": 0.000164031982421875
+    },
+    "delta_f1": -0.0507568411980176,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 392,
+    "gt_size": 7,
+    "subgraph_nodes": 118,
+    "subgraph_edges": 322,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.20064052795031057,
+      "jaccard": 0.12312391555812609,
+      "n_pred": 28,
+      "n_gt": 1,
+      "n_communities": 28,
+      "time_s": 0.0007483959197998047
+    },
+    "hedonic": {
+      "f1": 0.31480696431231997,
+      "jaccard": 0.19799456852195702,
+      "n_pred": 27,
+      "n_gt": 1,
+      "n_communities": 27,
+      "time_s": 0.0011458396911621094
+    },
+    "delta_f1": 0.1141664363620094,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 8499,
+    "gt_size": 8,
+    "subgraph_nodes": 103,
+    "subgraph_edges": 316,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.18100412975759236,
+      "jaccard": 0.10622240713773895,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.0005729198455810547
+    },
+    "hedonic": {
+      "f1": 0.20369731042670197,
+      "jaccard": 0.11666672064504882,
+      "n_pred": 19,
+      "n_gt": 1,
+      "n_communities": 19,
+      "time_s": 0.0006983280181884766
+    },
+    "delta_f1": 0.02269318066910961,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 12641,
+    "gt_size": 19,
+    "subgraph_nodes": 243,
+    "subgraph_edges": 845,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.17918008592253376,
+      "jaccard": 0.10681903733660589,
+      "n_pred": 51,
+      "n_gt": 1,
+      "n_communities": 51,
+      "time_s": 0.0014712810516357422
+    },
+    "hedonic": {
+      "f1": 0.2093639395568081,
+      "jaccard": 0.1193344156305248,
+      "n_pred": 46,
+      "n_gt": 1,
+      "n_communities": 46,
+      "time_s": 0.002270221710205078
+    },
+    "delta_f1": 0.030183853634274338,
+    "in_equilibrium": true
+  },
+  {
+    "community_idx": 1645,
+    "gt_size": 6,
+    "subgraph_nodes": 39,
+    "subgraph_edges": 105,
+    "levels": 1,
+    "resolution": 0.1,
+    "leiden": {
+      "f1": 0.30434782608695654,
+      "jaccard": 0.2058823529411765,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.00019812583923339844
+    },
+    "hedonic": {
+      "f1": 0.40846745846745847,
+      "jaccard": 0.25949975949975945,
+      "n_pred": 6,
+      "n_gt": 1,
+      "n_communities": 6,
+      "time_s": 0.0002636909484863281
+    },
+    "delta_f1": 0.10411963238050193,
+    "in_equilibrium": true
+  }
+]

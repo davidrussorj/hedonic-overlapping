@@ -155,6 +155,11 @@ def run_one(g_full, gt_community, all_gt, levels, resolution, n_iterations, comm
     log(f"  Hedonic:  {len(cover):,} comunidades  F1={metrics_hedonic['f1']:.4f}  "
         f"Jaccard={metrics_hedonic['jaccard']:.4f}  [{t_hedonic:.1f}s]")
 
+    # Verificação de equilíbrio de Nash
+    t = time.time()
+    is_eq = og.in_equilibrium_overlapping(cover, resolution)
+    log(f"  Nash eq: {'✓ sim' if is_eq else '✗ não'}  [{time.time()-t:.1f}s]")
+
     delta_f1 = metrics_hedonic["f1"] - metrics_leiden["f1"]
     log(f"  ΔF1 = {delta_f1:+.4f}  {'✓ melhorou' if delta_f1 >= 0 else '✗ piorou'}")
 
@@ -168,6 +173,121 @@ def run_one(g_full, gt_community, all_gt, levels, resolution, n_iterations, comm
         "leiden":         {**metrics_leiden, "n_communities": n_leiden, "time_s": t_leiden},
         "hedonic":        {**metrics_hedonic, "n_communities": len(cover), "time_s": t_hedonic},
         "delta_f1":       delta_f1,
+        "in_equilibrium": is_eq,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Seleção de comunidades com sobreposição real no ground truth
+# ---------------------------------------------------------------------------
+
+def find_overlapping_communities(gt, min_overlap=2, min_size=5, max_size=200):
+    """Retorna lista de (idx, {parceiro: n_nodes_compartilhados}) para comunidades
+    que compartilham >= min_overlap nós com pelo menos uma outra comunidade GT."""
+
+    # índice invertido: vértice → lista de comunidades
+    vertex_to_comms = {}
+    for i, comm in enumerate(gt):
+        for v in comm:
+            if v not in vertex_to_comms:
+                vertex_to_comms[v] = []
+            vertex_to_comms[v].append(i)
+
+    result = []
+    for i, comm in enumerate(gt):
+        if not (min_size <= len(comm) <= max_size):
+            continue
+        partners = {}
+        for v in comm:
+            for j in vertex_to_comms.get(v, []):
+                if j != i:
+                    partners[j] = partners.get(j, 0) + 1
+        valid = {j: cnt for j, cnt in partners.items() if cnt >= min_overlap}
+        if valid:
+            result.append((i, valid))
+
+    return result
+
+
+def run_one_overlapping(g_full, gt, comm_idx, partners, levels, resolution, n_iterations):
+    """Experimento para uma comunidade com sobreposição real.
+
+    A sub-rede inclui os nós da comunidade alvo + todos os parceiros overlapping + L-hop.
+    O ground truth inclui todas as comunidades GT que caem dentro da sub-rede.
+    """
+    from hedonic.overlapping import OverlappingGame
+
+    # Seed = apenas a comunidade alvo; os parceiros são captados pela expansão L-hop
+    seed_nodes = set(gt[comm_idx])
+
+    t0 = time.time()
+    subg, old2new, new2old = extract_subgraph(g_full, seed_nodes, levels)
+    n_sub = subg.vcount()
+    m_sub = subg.ecount()
+    log(f"  sub-rede: {n_sub:,} nós, {m_sub:,} arestas  "
+        f"(seed={len(seed_nodes)}, {len(partners)} parceiros, {levels}-hop)  [{time.time()-t0:.1f}s]")
+
+    if n_sub < 3 or m_sub == 0:
+        log("  sub-rede muito pequena, pulando.")
+        return None
+
+    # GT dentro da sub-rede (todas as comunidades que caem aqui)
+    gt_sub = []
+    for comm in gt:
+        members = [old2new[v] for v in comm if v in old2new]
+        if len(members) >= 2:
+            gt_sub.append(members)
+
+    # GT apenas da comunidade alvo (para métricas focadas)
+    gt_target = [[old2new[v] for v in gt[comm_idx] if v in old2new]]
+
+    og = OverlappingGame(subg)
+
+    # Leiden não-overlapping
+    t = time.time()
+    part = og.community_leiden(resolution=resolution, n_iterations=-1)
+    n_leiden = max(part.membership) + 1
+    leiden_cover = [[v for v, c in enumerate(part.membership) if c == ci]
+                    for ci in range(n_leiden)]
+    t_leiden = time.time() - t
+    metrics_leiden = evaluate(leiden_cover, gt_target)
+    log(f"  Leiden:   {n_leiden:,} comunidades  F1={metrics_leiden['f1']:.4f}  [{t_leiden:.1f}s]")
+
+    # Hedonic overlapping
+    t = time.time()
+    cover_obj = og.community_leiden_overlapping(
+        resolution=resolution,
+        n_iterations=n_iterations,
+        initial_membership=part.membership,
+    )
+    cover = list(cover_obj)
+    t_hedonic = time.time() - t
+    metrics_hedonic = evaluate(cover, gt_target)
+    log(f"  Hedonic:  {len(cover):,} comunidades  F1={metrics_hedonic['f1']:.4f}  [{t_hedonic:.1f}s]")
+
+    # Nash equilibrium
+    t = time.time()
+    is_eq = og.in_equilibrium_overlapping(cover, resolution)
+    log(f"  Nash eq: {'✓ sim' if is_eq else '✗ não'}  [{time.time()-t:.1f}s]")
+
+    delta_f1 = metrics_hedonic["f1"] - metrics_leiden["f1"]
+    shared = sum(partners.values())
+    log(f"  ΔF1={delta_f1:+.4f}  parceiros={len(partners)}  nós_compartilhados={shared}  "
+        f"{'✓' if delta_f1 >= 0 else '✗'}")
+
+    return {
+        "community_idx":    comm_idx,
+        "gt_size":          len(gt[comm_idx]),
+        "n_partners":       len(partners),
+        "shared_nodes":     shared,
+        "subgraph_nodes":   n_sub,
+        "subgraph_edges":   m_sub,
+        "levels":           levels,
+        "resolution":       resolution,
+        "leiden":           {**metrics_leiden, "n_communities": n_leiden, "time_s": t_leiden},
+        "hedonic":          {**metrics_hedonic, "n_communities": len(cover), "time_s": t_hedonic},
+        "delta_f1":         delta_f1,
+        "in_equilibrium":   is_eq,
     }
 
 
@@ -182,9 +302,13 @@ def main():
     parser.add_argument("--resolution",     type=float, default=0.1)
     parser.add_argument("--n_iterations",   type=int,   default=5)
     parser.add_argument("--n_communities",  type=int,   default=20,
-                        help="Número de comunidades GT a testar (amostradas aleatoriamente)")
+                        help="Número de comunidades GT a testar")
     parser.add_argument("--community_idx",  type=int,   default=None,
-                        help="Índice específico de comunidade GT (substitui --n_communities)")
+                        help="Índice específico de comunidade GT")
+    parser.add_argument("--overlapping_only", action="store_true",
+                        help="Selecionar apenas comunidades com sobreposição real no GT")
+    parser.add_argument("--min_overlap",    type=int,   default=2,
+                        help="Mínimo de nós compartilhados para considerar sobreposição")
     parser.add_argument("--output",         default="results/subgraph_experiment.json")
     args = parser.parse_args()
 
@@ -203,28 +327,53 @@ def main():
     g, gt, node_map = pickle.load(open(cache, "rb"))
     log(f"[load] {g.vcount():,} nós, {g.ecount():,} arestas, {len(gt):,} GT", t0)
 
-    # Selecionar comunidades a testar
-    if args.community_idx is not None:
-        indices = [args.community_idx]
-    else:
-        # Filtrar comunidades com tamanho razoável (5–200 nós)
-        candidates = [i for i, c in enumerate(gt) if 5 <= len(c) <= 200]
+    # Selecionar comunidades a testar (modo padrão)
+    if not args.overlapping_only:
+        if args.community_idx is not None:
+            indices = [args.community_idx]
+        else:
+            candidates = [i for i, c in enumerate(gt) if 5 <= len(c) <= 200]
+            rng = np.random.default_rng(42)
+            indices = rng.choice(candidates, size=min(args.n_communities, len(candidates)),
+                                 replace=False).tolist()
+
+    if args.overlapping_only:
+        log(f"\n[select] Buscando comunidades com sobreposição real (min_overlap={args.min_overlap}) …")
+        t_sel = time.time()
+        overlapping_list = find_overlapping_communities(
+            gt, min_overlap=args.min_overlap, min_size=5, max_size=200
+        )
+        log(f"[select] {len(overlapping_list):,} comunidades com sobreposição encontradas  [{time.time()-t_sel:.1f}s]")
         rng = np.random.default_rng(42)
-        indices = rng.choice(candidates, size=min(args.n_communities, len(candidates)),
-                             replace=False).tolist()
+        chosen = rng.choice(len(overlapping_list),
+                            size=min(args.n_communities, len(overlapping_list)),
+                            replace=False)
+        overlapping_sample = [overlapping_list[i] for i in chosen]
+        log(f"[select] Amostradas {len(overlapping_sample)} comunidades\n")
 
-    log(f"\n[exp] {len(indices)} comunidades  levels={args.levels}  γ={args.resolution:.2e}\n")
+        results = []
+        for rank, (idx, partners) in enumerate(overlapping_sample):
+            log(f"[{rank+1}/{len(overlapping_sample)}] comunidade {idx}  "
+                f"({len(gt[idx])} nós GT, {len(partners)} parceiros)")
+            t_comm = time.time()
+            result = run_one_overlapping(g, gt, idx, partners, args.levels,
+                                         args.resolution, args.n_iterations)
+            if result:
+                results.append(result)
+            log(f"  total: {time.time()-t_comm:.1f}s\n")
+    else:
+        log(f"\n[exp] {len(indices)} comunidades  levels={args.levels}  γ={args.resolution:.2e}\n")
 
-    results = []
-    for rank, idx in enumerate(indices):
-        gt_comm = gt[idx]
-        log(f"[{rank+1}/{len(indices)}] comunidade {idx}  ({len(gt_comm)} nós GT)")
-        t_comm = time.time()
-        result = run_one(g, gt_comm, gt, args.levels, args.resolution,
-                         args.n_iterations, idx)
-        if result:
-            results.append(result)
-        log(f"  total: {time.time()-t_comm:.1f}s\n")
+        results = []
+        for rank, idx in enumerate(indices):
+            gt_comm = gt[idx]
+            log(f"[{rank+1}/{len(indices)}] comunidade {idx}  ({len(gt_comm)} nós GT)")
+            t_comm = time.time()
+            result = run_one(g, gt_comm, gt, args.levels, args.resolution,
+                             args.n_iterations, idx)
+            if result:
+                results.append(result)
+            log(f"  total: {time.time()-t_comm:.1f}s\n")
 
     # Resumo
     if results:
@@ -232,11 +381,13 @@ def main():
         avg_f1_hedonic = np.mean([r["hedonic"]["f1"] for r in results])
         avg_delta      = np.mean([r["delta_f1"]      for r in results])
         n_improved     = sum(1 for r in results if r["delta_f1"] >= 0)
+        n_eq           = sum(1 for r in results if r["in_equilibrium"])
         log("=" * 55)
         log(f"  Leiden  F1 médio : {avg_f1_leiden:.4f}")
         log(f"  Hedonic F1 médio : {avg_f1_hedonic:.4f}")
         log(f"  ΔF1 médio        : {avg_delta:+.4f}")
         log(f"  Melhorou em      : {n_improved}/{len(results)} comunidades")
+        log(f"  Equilíbrio Nash  : {n_eq}/{len(results)} comunidades")
         log("=" * 55)
 
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)

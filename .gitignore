@@ -7,6 +7,4 @@ build/
 *.so
 *.o
 data/
-results/
-*.json
 .DS_Store
