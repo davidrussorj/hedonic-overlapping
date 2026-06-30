@@ -188,7 +188,7 @@ def resolution_sweep(og, gt, resolutions, n_iter):
     n = og.vcount()
     sweep = []
     log(f"\n[sweep] {len(resolutions)} resoluções: "
-        f"{resolutions[0]:.1e} → {resolutions[-1]:.1e}", flush=True)
+        f"{resolutions[0]:.1e} → {resolutions[-1]:.1e}")
 
     for i, res in enumerate(resolutions):
         log(f"\n[sweep {i+1}/{len(resolutions)}] γ={res:.5e} …")

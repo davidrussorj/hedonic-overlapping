@@ -17,6 +17,7 @@ Usage example:
 
 from __future__ import annotations
 
+import time
 import numpy as np
 from collections import defaultdict
 from igraph import Graph
@@ -84,17 +85,15 @@ class OverlappingGame(Game):
 
         # Try C extension first
         try:
-            from igraph import Graph as _G
-            if hasattr(_G, '_community_leiden_overlapping_c'):
-                from hedonic.python_patch import _community_leiden_overlapping
-                return _community_leiden_overlapping(
-                    self,
-                    weights=weights,
-                    resolution=resolution,
-                    n_iterations=n_iterations,
-                    initial_membership=initial_membership,
-                )
-        except Exception:
+            from igraph.community import _community_leiden_overlapping
+            return _community_leiden_overlapping(
+                self,
+                weights=weights,
+                resolution=resolution,
+                n_iterations=n_iterations,
+                initial_membership=initial_membership,
+            )
+        except (ImportError, AttributeError):
             pass
 
         # Pure-Python fallback
@@ -155,14 +154,24 @@ class OverlappingGame(Game):
 
         # Run local-moving iterations
         itr = 0
+        t0_total = time.time()
         while True:
+            t_sweep = time.time()
+            n_active = sum(1 for s in comm_members if s)
+            print(f"[fastmove] sweep {itr + 1} — {n:,} vértices, {n_active:,} comunidades …", flush=True)
             changed = self._overlapping_fastmove(
                 n, adj, vertex_comms, comm_members, comm_size, resolution
             )
             itr += 1
+            elapsed = time.time() - t_sweep
+            n_active = sum(1 for s in comm_members if s)
+            status = "mudou" if changed else "estável"
+            print(f"[fastmove] sweep {itr} — {n_active:,} comunidades  [{elapsed:.1f}s]  {status}", flush=True)
             if not changed:
+                print(f"[fastmove] convergiu após {itr} sweep(s)  [{time.time() - t0_total:.1f}s total]", flush=True)
                 break
             if n_iterations > 0 and itr >= n_iterations:
+                print(f"[fastmove] atingiu limite de {n_iterations} iterações  [{time.time() - t0_total:.1f}s total]", flush=True)
                 break
 
         # Build output: list of sorted vertex lists per non-empty community
@@ -188,8 +197,13 @@ class OverlappingGame(Game):
         """
         changed = False
         order = np.random.permutation(n)
+        checkpoint = max(1, n // 10)
+        t_start = time.time()
 
-        for v in map(int, order):
+        for i, v in enumerate(map(int, order)):
+            if i > 0 and i % checkpoint == 0:
+                pct = 100 * i // n
+                print(f"[fastmove]   {pct:3d}%  [{time.time() - t_start:.0f}s]", flush=True)
             # Accumulate edge weight to each community seen in neighborhood
             ewc: dict[int, float] = defaultdict(float)
             for u, wvu in adj[v]:
