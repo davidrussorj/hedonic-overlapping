@@ -102,7 +102,7 @@ q_no = og3.quality_overlapping(cover_no, resolution=res3)
 # Overlapping (parte do mesmo ponto)
 cover_ov = og3.community_leiden_overlapping(
     resolution=res3, n_iterations=-1,
-    initial_membership=p_no.membership
+    initial_membership=[[c] for c in p_no.membership]
 )
 q_ov = og3.quality_overlapping(list(cover_ov), resolution=res3)
 

@@ -8,3 +8,5 @@ build/
 *.o
 data/
 .DS_Store
+*:Zone.Identifier
+results/*_covers.pkl
