@@ -97,7 +97,82 @@ Este experimento **não invalida** os resultados anteriores. Ele mostra que o he
 
 ---
 
+## Experimento 5 — Re-execução pós-atualização da API C (v1 vs v2)
+
+**Contexto:** o wrapper C (`igraph_community_leiden_overlapping`) foi reescrito para expor `beta`, `max_memberships`, `initial_membership`, `allow_isolation` e `only_local_moving` — a mesma API do `community_leiden` disjunto. Essa mudança também trouxe um bug de integração: `initial_membership` agora exige uma lista de listas (um sub-array de ids de comunidade por vértice), mas o código de experimento ainda passava a lista plana do Leiden (`part.membership`), o que corrompia memória (`free(): invalid pointer`). Corrigido em `hedonic_ext/overlapping_game.py`, `scripts/test_small.py` e `scripts/subgraph_experiment.py` convertendo para `[[c] for c in part.membership]`.
+
+Com o wrapper corrigido, reexecutamos o **mesmo setup do Experimento 1** (amostra aleatória, 1-hop, γ=0.1) para servir de comparação direta, desta vez também medindo o **hedônico v2** (modelo de intensidade fracionária, `f_v = 1/√|σ_v|`, fallback puro Python — ver `hedonic_ext/overlapping_game.py`).
+
+**Arquivos:** `results/subgraph_L1_n200_fixed.json` / `results/subgraph_L1_n1000_fixed.json` (+ `_covers.pkl`/`_covers.json` com as coberturas completas e métricas com Omega). Cache regenerado do zero em 2026-07-03 com o wrapper atual (γ=0.1 fixo, `n_iterations=5` para v1/v2, Leiden sempre `-1`); os números abaixo são dessa rodada — pequenas variações de décimos de milésimo em relação a rodadas anteriores vêm do RNG interno do igraph (ordem de varredura do local-move), que não é fixado por seed.
+
+| Método | n=200 F1 | n=1000 F1 |
+|--------|----------|-----------|
+| Leiden não-overlapping | 0.3126 ±0.1842 | 0.3122 ±0.1881 |
+| Hedônico v1 (vetorizado, C) | 0.3095 ±0.1829 | 0.3075 ±0.1862 |
+| Hedônico v2 (fracionário, Python) | **0.3615 ±0.1925** | **0.3605 ±0.1937** |
+
+| ΔF1 vs Leiden | n=200 | n=1000 |
+|---|---|---|
+| v1 − Leiden | −0.0031 ±0.0355 | −0.0048 ±0.0362 |
+| v2 − Leiden | **+0.0489 ±0.0600** | **+0.0483 ±0.0594** |
+
+**Achado principal — v1 regrediu:** no Experimento 1 (API antiga), o hedônico batia o Leiden em 84.6% dos casos com ΔF1 médio +0.112. Com a API atual e os mesmos parâmetros, **v1 não bate mais o Leiden em média**. Decompondo o ΔF1 por comunidade:
+
+| v1 vs Leiden | n=200 | n=1000 |
+|---|---|---|
+| Sem mudança (ΔF1 = 0) | 51 (25.5%) | 265 (26.5%) |
+| Melhorou (ΔF1 > 0) | 71 (35.5%) | 331 (33.1%) |
+| Piorou (ΔF1 < 0) | 78 (39.0%) | 404 (40.4%) |
+
+(Para v2, n=1000: 18 sem mudança, 882 melhoraram, 100 pioraram — padrão muito mais próximo do antigo v1.)
+
+Ou seja: em ~1/4 dos casos o local-move não encontra nenhuma jogada que melhore a utilidade (fica preso na partição do Leiden), e quando encontra, piora um pouco mais do que melhora. Isso é uma regressão de comportamento, não apenas de números — sugere que algo no ciclo completo de três fases da nova API C (`only_local_moving=False` por padrão, que agora roda refinamento + agregação, fases pensadas para clustering disjunto) está prejudicando a qualidade overlapping. **Ainda não investigado a fundo** — próximo passo natural é rodar v1 com `only_local_moving=True` (pula refinamento/agregação, mais parecido com o comportamento antigo) e comparar.
+
+**v2 permanece a implementação de referência**: reproduz o padrão do v1 original (maioria dos casos melhora, poucos empates) com ΔF1 médio próximo de metade do que o v1 antigo mostrava (+0.048 vs +0.112) — ainda positivo e consistente entre n=200 e n=1000, mas hoje só roda em Python puro (sem aceleração C; ver Próximos Passos no `CLAUDE.md`).
+
+### Omega index — acurácia dos baselines de controle
+
+Pedido original: F1/Jaccard não distinguem `grand_coalition` de `total_overlap` por construção (best-match ignora multiplicidade). O Omega index (Collins & Dent 1988) foi vetorizado especificamente para poder rodar essa comparação em escala — a implementação original tinha dois loops Python O(n²) que inviabilizavam qualquer subgrafo acima de ~500 nós (o maior subgrafo aqui tem quase 6.000). Reescrita com produto esparso `M @ Mᵀ` (numpy/scipy) + comparação vetorizada; e um segundo ajuste para usar BLAS denso quando a cobertura é densa por natureza (`grand_coalition`/`total_overlap`, onde cada comunidade contém o subgrafo inteiro) — nesse caso a multiplicação esparsa genérica é 10-20× mais lenta que a densa. Resultado: de "trava/nunca termina" para <1s por comunidade mesmo nos maiores subgrafos.
+
+| Método | n=200 Omega | n=1000 Omega |
+|--------|-------------|--------------|
+| Leiden não-overlapping | 0.0585 ±0.1097 | 0.0586 ±0.1249 |
+| Hedônico v1 | 0.0507 ±0.0979 | 0.0504 ±0.1125 |
+| Hedônico v2 | 0.0329 ±0.0694 | 0.0279 ±0.0600 |
+| Singleton | 0.0000 | 0.0000 |
+| Grand Coalition | 0.0000 | 0.0000 |
+| Total Overlap | 0.0000 | 0.0000 |
+
+**Os três baselines de controle zeram — e isso é o resultado esperado, não um bug.** Omega corrige por concordância ao acaso (como o Rand ajustado): uma cobertura cujo padrão de co-pertencimento é **constante** para todo par de vértices (singleton = sempre 0 comunidades compartilhadas; grand_coalition/total_overlap = sempre a mesma contagem k) não carrega informação discriminativa nenhuma sobre a estrutura real — o termo "esperado ao acaso" da fórmula cancela quase exatamente o termo "observado", dando Omega≈0 por construção matemática, independente do ground truth. Isso serve de **piso de validação**: qualquer método que carregue sinal real de estrutura deve ficar acima de zero, o que se confirma — Leiden, v1 e v2 ficam todos claramente acima (0.03–0.06).
+
+**v2 tem o menor Omega entre os três métodos reais, apesar do maior F1.** F1 mede melhor correspondência (best-match) por comunidade; Omega mede concordância na contagem exata de comunidades compartilhadas por par. v2 gera bem mais comunidades que Leiden/v1 (ver contagens nas seções anteriores), o que aumenta a chance de acerto no best-match (F1) mas dificulta acertar a multiplicidade exata esperada pelo ground truth (Omega). As duas métricas capturam noções diferentes de acerto — vale reportar as duas no paper, não só F1.
+
+## Experimento 6 — Resolução adaptativa (densidade da sub-rede) [PRELIMINAR]
+
+> ⚠️ **Preliminar, será refeito.** Esta rodada usou `n_iterations=5` (default do script) para v1/v2, não `n_iterations=-1` (até convergência) como pedido — falta reexecutar com `--n_iterations -1` antes de tratar estes números como definitivos. Mantido aqui como registro do sinal observado.
+
+**Motivação:** os experimentos anteriores usam γ=0.1 fixo para toda sub-rede, independente do seu tamanho/densidade real. `scripts/subgraph_experiment.py` ganhou a flag `--density_resolution`, que usa a densidade de cada sub-rede (`og.density()`) como sua própria γ — mesma convenção já usada como default em `OverlappingGame.community_leiden_overlapping(resolution=None)`.
+
+**Arquivos:** `results/subgraph_L1_n{200,1000}_density_covers.json`. Resolução efetiva por sub-rede: média 0.141 (n=200) / 0.140 (n=1000), desvio padrão ~0.135 — varia bastante entre sub-redes (vs. 0.1 fixo antes).
+
+| Método | n=200 F1 | n=1000 F1 | n=200 Omega | n=1000 Omega |
+|--------|----------|-----------|-------------|--------------|
+| Leiden não-overlapping | 0.3078 ±0.1754 | 0.3014 ±0.1639 | 0.1250 ±0.2345 | 0.1032 ±0.2094 |
+| Hedônico v1 | 0.3077 ±0.1770 | 0.3017 ±0.1670 | 0.1249 ±0.2349 | 0.0998 ±0.2059 |
+| Hedônico v2 | **0.3623 ±0.1934** | **0.3518 ±0.1856** | 0.0577 ±0.0887 | 0.0546 ±0.0874 |
+
+| ΔF1 (v1−Leiden) | n=200 | n=1000 |
+|---|---|---|
+| Média | −0.0002 ±0.0308 | **+0.0003 ±0.0277** |
+| Zero / melhorou / piorou | 82 / 61 / 57 | 376 / 333 / 291 |
+
+**Sinal preliminar interessante:** com γ=densidade, o v1 deixa de regredir — fica **estatisticamente empatado** com o Leiden (ΔF1 média ≈ 0, contra −0.003 a −0.005 com γ=0.1 fixo no Experimento 5). Ainda não bate o Leiden como o v1 antigo batia, mas o γ fixo parece estar prejudicando especificamente o v1, não o v2 (v2 mal muda: ΔF1 vs Leiden continua em torno de +0.05 nos dois setups). Também sobe bastante o Omega de Leiden/v1 (0.10–0.13 vs 0.05–0.06 fixo) — a cobertura fica mais alinhada com a multiplicidade real do ground truth. **Precisa confirmar com `n_iterations=-1`** antes de qualquer conclusão mais forte.
+
+---
+
 ## Resumo Comparativo
+
+> ⚠️ A tabela abaixo é histórica — reflete a API C anterior à correção descrita no **Experimento 5**. Com a API atual, "Hedonic F1" (v1) não reproduz mais esses ganhos; ver Experimento 5 para os números atualizados e o v2 como implementação de referência.
 
 | Experimento | n | Leiden F1 | Hedonic F1 | ΔF1 médio | Melhorou | Nash |
 |---|---|---|---|---|---|---|
