@@ -25,15 +25,11 @@ Melhorou em      : 16/20 comunidades (80%)
      --data_dir data/dblp --levels 2 --n_communities 100 --resolution 0.1
    ```
 
-2. **Commit das mudanças pendentes no igraph C fork** — `remove_fast` + logs de progresso não foram commitados ainda:
-   ```bash
-   cd /home/davidcubric/igraph
-   git add src/community/leiden.c
-   git commit -m "perf: usar remove_fast (O(1)) e adicionar logs de progresso"
-   git push davidrussorj overlapping
-   ```
+2. **Unificar os branches do igraph C fork** — o `remove_fast` (fca6a67, branch `overlapping`, já no GitHub) não está no branch `lucas` (b60b4cd), que é o que o submódulo do python-igraph usa. Os dois divergem desde antes de 2026-06-30.
 
-3. **Escrever o paper** com Sadoc — usar os resultados de subgrafos como validação empírica.
+3. **Posicionar frente ao hedonic 2.0** — em 2026-10-18 o `lucaslopes/hedonic` (antigo `hedonic-game`) lançou detecção sobreposta própria (`max_memberships > 1`, intensidade `1/sqrt(|σ_v|)`, núcleo em C). Este repositório depende do `hedonic==0.0.10` (PyPI); não instalar pelo GitHub.
+
+4. **Escrever o paper** com Sadoc — usar os resultados de subgrafos como validação empírica.
 
 ---
 
@@ -53,9 +49,9 @@ Trabalho conjunto entre o dono do repositório (implementação) e Sadoc (teoria
 | Repositório | URL | Branch | Status |
 |-------------|-----|--------|--------|
 | Este repo (patches + experimentos) | https://github.com/davidrussorj/hedonic-overlapping | `main` | ✅ atualizado |
-| igraph C fork | https://github.com/davidrussorj/igraph | `overlapping` | ⚠️ mudanças locais não commitadas (remove_fast + logs) |
-| python-igraph fork | https://github.com/davidrussorj/python-igraph | `lucas` | ✅ wrapper commitado e no GitHub |
-| hedonic lib (upstream) | https://github.com/lucaslopes/hedonic | — | OverlappingGame instalada localmente |
+| igraph C fork | https://github.com/davidrussorj/igraph | `overlapping` / `lucas` | ✅ no GitHub; ⚠️ branches divergem (`remove_fast` só no `overlapping`) |
+| python-igraph fork | https://github.com/davidrussorj/python-igraph | `lucas` | ✅ wrapper commitado e no GitHub (submódulo → igraph `lucas`) |
+| hedonic lib (upstream) | https://pypi.org/project/hedonic/0.0.10/ | — | usar `hedonic==0.0.10 --no-deps`; o GitHub `lucaslopes/hedonic` agora é a 2.0 (incompatível) |
 
 ---
 
@@ -77,8 +73,8 @@ hedonic-overlapping/          ← github.com/davidrussorj/hedonic-overlapping
     └── subgraph_experiment.py     ← experimento em sub-redes L-hop (recomendado)
 
 /home/davidcubric/igraph/                     ← clone do fork C
-  branch: overlapping
-  ⚠️ leiden.c tem mudanças locais não commitadas: remove_fast + logs de progresso
+  branch: overlapping (sincronizado com davidrussorj/overlapping)
+  ⚠️ o remove_fast está só neste branch; o submódulo do python-igraph usa o branch lucas
 
 /home/davidcubric/python-igraph/              ← clone do fork Python
   branch: lucas                               ← wrapper commitado e no GitHub

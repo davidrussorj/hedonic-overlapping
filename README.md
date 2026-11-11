@@ -84,24 +84,36 @@ hedonic-overlapping/
 
 ### Pré-requisitos
 
-- Python ≥ 3.10
-- `lucas-igraph` — fork do igraph com parâmetros extras no Leiden
+- Python ≥ 3.12 (exigido pelo `hedonic` 0.0.x)
+- `lucas-igraph` 0.11.9.x — fork do igraph com parâmetros extras no Leiden
   (`only_local_moving`, `allow_isolation`)
-- `hedonic` — biblioteca do jogo hedônico (fork lucaslopes)
+- `hedonic` **0.0.10** (PyPI) — biblioteca do jogo hedônico (lucaslopes)
+
+> **Atenção — não instale o `hedonic` pelo GitHub.** Em 18/10/2026 o repositório
+> `lucaslopes/hedonic-game` foi renomeado para `lucaslopes/hedonic` e passou a ser o
+> **hedonic 2.0**: núcleo próprio em C, API nova (`n_iterations` e outros parâmetros
+> 1.x geram `TypeError`) e dependência do igraph padrão ≥ 1.0. O histórico antigo foi
+> reescrito, então o commit usado originalmente neste projeto não existe mais no GitHub.
+> O `OverlappingGame` só usa métodos de `igraph.Graph`; o `hedonic` 0.0.10 do PyPI
+> serve de base e passa em `scripts/test_small.py`.
 
 ### Passo a passo
 
 ```bash
-# 1. Instalar o lucas-igraph (o fork, não o igraph padrão)
-pip install lucas-igraph
+# 1. Instalar o lucas-igraph na linha 0.11.9.x (o fork, não o igraph padrão)
+pip install "lucas-igraph==0.11.9.3"
 
-# 2. Instalar a biblioteca hedonic
-pip install git+https://github.com/lucaslopes/hedonic.git
+#    Opcional — backend C: no lugar do passo acima, instalar o fork com o patch
+#    overlapping (precisa de compilador C e cmake). Sem ele, o OverlappingGame
+#    usa automaticamente a implementação em Python puro.
+#    git clone --recurse-submodules -b lucas https://github.com/davidrussorj/python-igraph.git
+#    pip install -e python-igraph
 
-# 3. Re-fixar o lucas-igraph (o setup.py do hedonic instala o igraph padrão por cima)
-pip install lucas-igraph --force-reinstall
+# 2. Instalar o hedonic 0.0.10 sem dependências (para não trocar o igraph)
+pip install "hedonic==0.0.10" --no-deps
+pip install numpy scipy
 
-# 4. Instalar o OverlappingGame dentro do pacote hedonic
+# 3. Instalar o OverlappingGame dentro do pacote hedonic
 cp hedonic_ext/overlapping_game.py \
    $(python -c "import hedonic; import os; print(os.path.dirname(hedonic.__file__))")/overlapping.py
 ```
@@ -113,13 +125,19 @@ python -c "
 import igraph; print('igraph:', igraph.__version__)   # deve ser 0.11.9.x
 from hedonic.overlapping import OverlappingGame
 print('OverlappingGame: OK')
+try:
+    from igraph.community import _community_leiden_overlapping
+    print('backend C: OK')
+except ImportError:
+    print('backend C: ausente (fallback Python)')
 "
 ```
 
-Saída esperada:
+Saída esperada (com o fork compilado):
 ```
 igraph: 0.11.9.3
 OverlappingGame: OK
+backend C: OK
 ```
 
 ---
@@ -401,9 +419,10 @@ aplicados sem re-avaliação.
 
 | Repositório | Branch | Descrição |
 |-------------|--------|-----------|
-| [davidrussorj/igraph](https://github.com/davidrussorj/igraph/tree/overlapping) | `overlapping` | Fork da biblioteca C com `igraph_community_leiden_overlapping` |
+| [davidrussorj/igraph](https://github.com/davidrussorj/igraph/tree/overlapping) | `overlapping` / `lucas` | Fork da biblioteca C com `igraph_community_leiden_overlapping`. O submódulo do python-igraph aponta para o branch `lucas` (API pública + `initial_membership`); o `overlapping` tem o commit `remove_fast`, que ainda não está no `lucas` |
 | [davidrussorj/python-igraph](https://github.com/davidrussorj/python-igraph/tree/lucas) | `lucas` | Fork do wrapper Python com o método exposto ao Python |
-| [lucaslopes/hedonic](https://github.com/lucaslopes/hedonic) | — | Biblioteca hedonic game (base da classe `OverlappingGame`) |
+| [hedonic 0.0.10 (PyPI)](https://pypi.org/project/hedonic/0.0.10/) | — | Biblioteca hedonic game (base da classe `OverlappingGame`) |
+| [lucaslopes/hedonic](https://github.com/lucaslopes/hedonic) | `main` | hedonic 2.0 (antigo `hedonic-game`): detecção disjunta **e sobreposta** com núcleo próprio em C — API incompatível com este repositório |
 
 ---
 

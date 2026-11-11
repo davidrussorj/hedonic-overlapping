@@ -3,9 +3,6 @@ Teste rápido do OverlappingGame com grafos pequenos.
 Não precisa de DBLP nem de compilação C.
 """
 
-import sys
-sys.path.insert(0, '/home/davidcubric/.local/lib/python3.12/site-packages')
-
 import igraph as ig
 import numpy as np
 from hedonic.overlapping import OverlappingGame
